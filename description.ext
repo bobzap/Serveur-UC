@@ -1,0 +1,2192 @@
+respawn = 3;
+respawndelay = 5;
+respawnButton = 1;
+disabledAI = true;
+ 
+enableDebugConsole = 1;
+allowFunctionsLog = 0;
+
+loadScreen="res\liberation.jpg";
+onLoadMission = "Union Corp";
+author = "Sayker & Kano";
+onLoadName = "501St Division HORAX";
+
+joinUnassigned = 1;
+
+#include "GREUH\UI\GREUH_interface.hpp"
+#include "ui\liberation_interface.hpp"
+#include "ui\liberation_notifications.hpp"
+#include "ui\mission_params.hpp"
+#include "modules\grad-leaveNotes\grad_leaveNotes.hpp"
+#include "modules\grad-moneymenu\grad_moneymenu.hpp"
+#include "modules\grad-listBuymenu\grad_listBuymenu.hpp"
+#include "modules\grad-fortifications\grad_fortifications.hpp"
+#include "ACL\ACL_Rcs.hpp"
+#include "TER_TargetGUI\defines_A3.hpp"
+#include "TER_TargetGUI\TER_target.hpp"
+
+
+
+
+class CfgDebriefing
+{
+	class End1
+	{
+		title =	$STR_SORRY;
+		subtitle = "";
+		description = $STR_COMMANDER_NOT_AUTHORIZED;
+		pictureBackground = "";
+	};
+
+};
+
+
+
+
+class CfgSounds {
+	sounds[] = {};
+    #include "modules\grad-leaveNotes\cfgSounds.hpp"
+
+	class vum
+	{
+		name = "vum";
+		sound[] = {"\sound\vum.ogg", db+10, 1};
+		titles[] = {};
+	};
+	class up_impact
+	{
+		name = "up_impact";
+		sound[] = {"\sound\up_impact.ogg", db+10, 1};
+		titles[] = {};
+	};
+	class ecou
+	{
+		name = "ecou";
+		sound[] = {"\sound\ecou.ogg", db+20, 1};
+		titles[] = {};
+	};		
+	class oscilatie
+	{
+		name = "oscilatie";
+		sound[] = {"\sound\oscilatie.ogg", db+15, 1};
+		titles[] = {};
+	};	
+	class eco_ray	
+	{
+		name = "eco_ray";
+		sound[] = {"\sound\eco_ray.ogg", db+3, 1};
+		titles[] = {};
+	};
+	class earthquakes	
+	{
+		name = "earthquakes";
+		sound[] = {"\sound\earthquakes.ogg", 1, 1};
+		titles[] = {};
+	};	
+
+ class spark1
+	{
+		name = "spark1";
+		sound[] = {"\sound\spark1.ogg", db+5, 1};
+		titles[] = {};
+	};
+	class spark11
+	{
+		name = "spark11";
+		sound[] = {"\sound\spark11.ogg", db+5, 1};
+		titles[] = {};
+	};
+	class spark2
+	{
+		name = "spark2";
+		sound[] = {"\sound\spark2.ogg", db+5, 1};
+		titles[] = {};
+	};		
+	class spark22
+	{
+		name = "spark22";
+		sound[] = {"\sound\spark22.ogg", db+5, 1};
+		titles[] = {};
+	};	
+	class spark3	
+	{
+		name = "spark3";
+		sound[] = {"\sound\spark3.ogg", db+5, 1};
+		titles[] = {};
+	};
+	class spark4	
+	{
+		name = "spark4";
+		sound[] = {"\sound\spark4.ogg", db+5, 1};
+		titles[] = {};
+	};
+	class spark5	
+	{
+		name = "spark5";
+		sound[] = {"\sound\spark5.ogg", db+5, 1};
+		titles[] = {};
+	};
+	class broasca_3
+	{
+		name = "broasca_3";
+		sound[] = {"\sound\broasca_3.ogg", 1, 1};
+		titles[] = {1, ""};
+	}; 	
+
+};
+	
+	
+	
+class cfgMusic
+{
+  class track1
+  {
+       name = "track1";
+       sound[] = {"Sounds\intromusic.ogg", db+1,1};
+   };
+   
+  
+};
+
+
+
+class CfgFunctions {
+	#include "modules\grad-leaveNotes\cfgFunctions.hpp"
+    #include "modules\grad-listBuymenu\cfgFunctions.hpp"
+    #include "modules\grad-moneymenu\cfgFunctions.hpp"
+	#include "gaia\cfgFunctions.hpp"
+	#include "jebus\cfgFunctions.hpp"
+	#include "modules\grad-fortifications\cfgFunctions.hpp"
+};
+
+
+class RscTitles {
+    #include "modules\grad-fortifications\dialog\hint\title.hpp"
+};
+
+//class CfgCommunicationMenu
+//{
+    //class helo_taxi
+   // {
+        //text = "Support Menu"; // Text displayed in the menu and in a notification
+        //submenu = "#USER:MENU_SUPPORT_1";  // Submenu opened upon activation
+		//expression = "";
+        //icon = "\a3\ui_f\data\gui\cfg\hints\CallSupport_CA.paa";
+        //cursor = ""; // Custom cursor displayed when the item is selected
+        //enable = "1"; // Simple expression condition for enabling the item
+        //removeAfterExpressionCall = 1; // 1 to remove the item after calling
+    //};
+	 //class reset_helo
+    //{
+        //text = "Reset Support Comms"; // Text displayed in the menu and in a notification
+        //submenu = "";  // Submenu opened upon activation
+		//expression = "LF_resetHelo = [helitaxi, helipad0, callsign] execVM 'support\HQ\resetCommsMenu.sqf'";
+        //icon = "";
+        //cursor = ""; // Custom cursor displayed when the item is selected
+        //enable = "1"; // Simple expression condition for enabling the item
+        //removeAfterExpressionCall = 1; // 1 to remove the item after calling
+    //};
+//}; 
+
+
+
+
+class Extended_InitPost_EventHandlers  {
+    class CAManBase {
+       init = "params ['_u']; if (!(isPlayer _u) && {local _u}) then {[_u,2] call grad_lbm_fnc_addFunds};";
+    };
+};
+
+
+class CfgGradMoneymenu {
+    canGiveDefault = 1;                                                    
+    canTransferToSidesDefault[] = {"east","west","independent","civilian"};
+    canTakeFromDeadDefault = 1;        
+    canSendDirectlyDefault = 0;                                    
+    canTakeFromSurrenderedDefault = 1;                                     
+    startMoney = 0;                                                        
+    startBankBalance = 10;                                                  
+    atmObjects[] = {"SWOP_computerTerminal3"};                                      
+};
+
+
+/////////////////////Fortifications//////////////////////////////////////////////////////
+
+class CfgGradFortifications {
+    canDemolishDefault = 1;
+    demolitionTimeFactor = 1;
+    playerInventorySize = 100;
+    vehicleInventorySizeFactor = 250;
+    fortificationOwnerType = "SIDE"
+
+    class Fortifications {
+        class Land_BagFence_Long_F {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 3;
+            demolitionTime = 5;
+			buildTime = 3;
+        };
+		
+		class Land_WoodPile_F {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 3;
+            demolitionTime = 8;
+			buildTime = 6;
+        };
+		
+		class Land_Trench_01_grass_F {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 3;
+            demolitionTime = 5;
+			buildTime = 12;
+        };
+		
+		class Land_Bunker_01_blocks_1_F {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 20;
+            demolitionTime = 5;
+			buildTime = 12;
+        };
+		
+		class Land_FirePlace_F {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 3;
+            demolitionTime = 2;
+			buildTime = 3;
+        };
+		
+		class ShootingMat_01_Olive_F {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 10;
+            demolitionTime = 4;
+			buildTime = 3;
+        };
+		
+		class ACE_ConcertinaWireCoil {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 3;
+            demolitionTime = 2;
+			buildTime = 2;
+        };
+		
+		class Land_Target_Dueling_01_F {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 3;
+            demolitionTime = 2;
+			buildTime = 2;
+			onBuildComplete = "(_this select 1)  setVariable ['TER_isTarget', true, true]";
+        };
+		
+		class Land_Camping_Light_F {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 3;
+            demolitionTime = 2;
+			buildTime = 1;
+        };
+		
+		
+		class Target_PopUp_Moving_Acc2_F {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 3;
+            demolitionTime = 2;
+			buildTime = 2;
+			onBuildComplete = "(_this select 1)  setVariable ['TER_isTarget', true, true]";  //add this code ine the init box when object is built
+        };
+
+		class Land_TripodScreen_01_dual_v2_F {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 3;
+            demolitionTime = 2;
+			buildTime = 2;
+			
+			
+        };
+		
+		
+		class CamoNet_BLUFOR_F {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 20;
+            demolitionTime = 5;
+			buildTime = 5;
+        };
+		
+		class Land_OPTRE_ConstructionBarrier1 {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 30;
+            demolitionTime = 5;
+			buildTime = 5;
+        };
+		
+		class Land_OPTRE_M72_barrierBlk {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 30;
+            demolitionTime = 5;
+			buildTime = 5;
+        };
+		
+		class Downy_Barricade {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 20;
+            demolitionTime = 5;
+			buildTime = 5;
+        };
+		
+		
+		class Land_OPTRE_blast_barrier_dest {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 30;
+            demolitionTime = 5;
+			buildTime = 5;
+        };	
+		
+        class SWOP_Barricade {
+            boundingBoxSize = 0.8;
+            surfaceNormal = 0;
+            size = 20;
+            canDemolish = 0;
+			demolitionTime = 5;
+			buildTime = 5;
+        };
+		
+		 class Land_HBarrier_1_F {
+            boundingBoxSize = 0.8;
+            surfaceNormal = 0;
+            size = 20;
+            canDemolish = 0;
+			demolitionTime = 5;
+			buildTime = 5;
+        };
+        class Land_TripodScreen_01_large_F {
+            boundingBoxSize = 0.8;
+            surfaceNormal = 0;
+			size = 20;
+            canDemolish = 0;
+            onBuildComplete = "(_this select 1)  remoteExecCall ['MRH_fnc_isSatMonitor', 0]";   
+			demolitionTime = 5;
+			buildTime = 5;
+	//remoteExecCall ["fnc_someScriptedFunction", targets, JIP];
+        };
+    };
+	
+	    
+    class Vehicles {
+        class B_Truck_01_box_F {
+            isStorage = 1;
+            vehicleInventorySize = 30;
+        };
+    };
+}; 
+
+
+
+
+
+
+
+
+class CfgGradBuymenu {
+    vehicleMarkers = 1;
+    tracking = 1;
+    trackingTag = "myMission";
+
+    //buyables set:
+    class Equipements_CLONES {
+
+        //category:  
+        class Weapons {
+            kindOf = "Weapons";
+            displayName = "Armes";
+
+            //items of this category:
+			
+			class SWOP_DC15 {
+				displayName = "DC15S";
+				description = "Dotation de base du clone";
+				price = 0;
+				stock = 50;
+                tracking = 1;
+			};
+				
+			class SWOP_DC15ABlasterRifle {
+				displayName = "DC15A";
+				description = "Dotation de base du clone lvl 1";
+                price = 0;
+                stock = 50;
+                permissionLevel = 1;
+                tracking = 1;
+			};	
+
+			class SWOP_Z6Blaster {
+				displayName = "Z6";
+                description = "Dotation de base du clone Heavy lvl 2";
+                price = 0;
+                stock = 50;
+                permissionLevel = 2;
+                tracking = 1;
+			};	
+
+			class SWOP_dc15xBlasterRifle {
+				displayName = "DC15X";
+                description = "Dotation de base du ARF lvl 3";
+                price = 0;
+                stock = 50;
+                permissionLevel = 3;
+                tracking = 1;
+			};	
+			
+			class SWOP_Valken38XBlasterRifle {
+				displayName = "Sniper Valken";
+				description = "Dotation de base du clone Sharp lvl 2";
+				price = 0;
+				stock = 50;
+                tracking = 1;
+				permissionLevel = 2;
+			};
+						
+			class swop_RepShotgun {
+				displayName = "Shotgun";
+				description = "Dotation du clone lvl 3";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 3;
+				
+			};
+			class SWOP_DTL20BlasterRifle {
+				displayName = "DLT20MB";
+				description = "Dotation du clone lvl 2";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 2;
+			};
+			
+			class SWOP_DC15ABlasterRifle_mod1 {
+				displayName = "DC15A LE";
+				description = "Dotation du clone lvl 1";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 1;
+			};
+			class SCI_RPS6 {
+				displayName = "Lance rocket";
+				description = "Dotation du clone lvl 2";
+				price = 0;
+				stock = 50;
+                tracking = 1;
+				permissionLevel = 2;
+			};
+			class SWOP_DC17Pistol {
+				displayName = "Arme ed poing gradé";
+                description = "Dotation du gradé lvl 2";
+                price = 150;
+                stock = 50;
+                permissionLevel = 2;
+                tracking = 1;
+			};	
+			class ACE_VMH3 {
+				displayName = "Détecteur de mine";
+				description = "Dotation de base du clone";
+				price = 20;
+				stock = 100;
+                tracking = 1;
+			
+			};
+
+        };
+
+
+		class Wearables {
+            kindOf = "Wearables";
+            displayName = "Equipements";
+
+            //items of this category:
+           
+			class Clone_Helmet {
+				displayName = "Casque recrue";
+				description = "Dotation du clone";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+
+			};
+			
+			class 182nd_ht {
+				displayName = "Casque Sergent";
+				description = "Dotation du clone lvl 4";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+				permissionLevel = 4;
+			};
+			class 182nd_Helmet {
+				displayName = "Casque Caporal";
+				description = "Dotation du clone lvl 3";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+				permissionLevel = 3;
+			};
+			
+			class 21st_Helmet {
+				displayName = "Casque JAG";
+				description = "Dotation du clone lvl 20";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+				permissionLevel = 20;
+			};
+			class 442nd_Helmet {
+				displayName = "Casque Horax";
+				description = "Dotation du clone lvl 4";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+				permissionLevel = 4;
+			};
+			class 21st_Krim {
+				displayName = "Casque Horax 2";
+				description = "Dotation du clone lvl 4";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+				permissionLevel = 4;
+			};
+			class 501st_Kaser {
+				displayName = "Casque République";
+				description = "Dotation du clone lvl 4";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+				permissionLevel = 4;
+			};
+			class 501st_Logic {
+				displayName = "Casque Officier Horax";
+				description = "Dotation du clone lvl 5";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+				permissionLevel = 5;
+			};
+			class 501st_Rne {
+				displayName = "Casque Mandalorien";
+				description = "Dotation du clone lvl 5";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+				permissionLevel = 5;
+			};
+			class 501st_Lindsey {
+				displayName = "Casque Sayker";
+				description = "Dotation du clone lvl 20";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+				permissionLevel = 20;
+			};
+		
+			class SWOP_Clonetrooper_501_helmet {
+				displayName = "Casque Clone 501st";
+                description = "Dotation de base du CT 501st, recrue, Medic, Heavy, Ingéneiur, CPL, SGT et LTN ";
+                price = 0;
+                stock = 50;
+                tracking = 1;
+			};	
+				
+			class SWOP_Clonetcadet_helmet {
+				displayName = "Casque Cadet";
+                description = "Dotation de base du Cadet";
+                price = 0;
+                stock = 50;
+                tracking = 1;
+			};
+			
+			class SWOP_Clonetrooper_ARF_helmet {
+				displayName = "Casque recrue ARF";
+                description = "Dotation de base du ARF recrue lvl 3";
+                price = 0;
+                stock = 50;
+                permissionLevel = 3;
+                tracking = 1;
+			};	
+				
+			class SWOP_Clonetrooper_ARF501_helmet {
+				displayName = "Casque ARF";
+                description = "Dotation de base du ARF lvl 3";
+                price = 0;
+                stock = 50;
+                permissionLevel = 3;
+                tracking = 1;
+			};	
+
+				class SWOP_CloneBARCV2501 {
+				displayName = "BARC";
+                description = "Dotation de base du BARC lvl 2";
+                price = 0;
+                stock = 50;
+                permissionLevel = 2;
+                tracking = 1;
+			};
+			
+			class SWOP_Clonetrooper_501_seashelmet {
+				displayName = "Casque Heavy";
+                description = "Dotation de base du HEAVY lvl 2";
+                price = 0;
+                stock = 50;
+                permissionLevel = 2;
+                tracking = 1;
+			};	
+			
+			
+			class SWOP_Clonetrooper_501_F_CombatUniform {
+                displayName = "Uniforme 501st";
+                description = "Uniforme standard de la legion 501st";
+                price = 0;
+                stock = 150;
+				tracking = 1;
+			};
+			
+			class SWOP_Clonetrooper_501_armor {
+                displayName = "Armure 501st";
+                description = "Armure standard de la legion 501st";
+                price = 0;
+                stock = 120;
+				tracking = 1;
+			};
+			
+			class SWOP_B_CloneBackpack_med {
+                displayName = "Sac Med";
+                description = "Sac a dos medic";
+                price = 0;
+                stock = 50;
+				tracking = 1;
+			};
+			
+			class SWOP_B_CloneBackpack_dem {
+                displayName = "Sac expert";
+                description = "Sac expert en explosif";
+                price = 10;
+                stock = 500;
+				tracking = 1;
+			};
+			
+				class SWOP_B_CloneBackpack {
+                displayName = "Sac clone";
+                description = "Sac a dos du soldat clone";
+                price = 0;
+                stock = 100;
+				tracking = 1;
+			};
+			
+			
+			class SWOP_B_SnowBackpack_Base {
+                displayName = "Sac clone";
+                description = "Sac clone Ingenieur ";
+                price = 0;
+                stock = 120;
+				permissionLevel = 0;
+				tracking = 1;
+			};
+			class SWOP_Clones_HUD {
+                displayName = "HUD Clone";
+                description = "Visière HUD Clone";
+                price = 0;
+                stock = 150;
+				tracking = 1;
+			};
+			class SWOP_B_CloneDVa {
+				displayName = "Radio longue portee";
+				description = "Dotation de base du clone";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+			};
+			
+			class SWOP_Clonetrooper_501med_armor {
+				displayName = "Armure médecin";
+				description = "Dotation de base du clone";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+			};
+			
+			class IP_uniform_Marco {
+				displayName = "Uniforme Chef ARF";
+				description = "Uniforme Chef ARF. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+				
+			};
+
+			class IP_armor_Marco {
+				displayName = "Armure Chef ARF";
+				description = "Armure Chef ARF. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+			class SWOP_Clonetrooper_2ARF501_helmet {
+				displayName = "Casque Chef ARF";
+				description = "Casque Chef ARF. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+			class IP_uniform_73 {
+				displayName = "Uniforme Soldat ARF";
+				description = "Uniforme soldat ARF. Niveau 2";
+				price = 300;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 2;
+			};
+
+
+
+
+			class IP_armor_73 {
+				displayName = "Armure Soldat ARF";
+				description = "Armure soldat ARF. Niveau 2";
+				price = 300;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 2;
+			};
+
+			class doom_442_uniform_p1_kripto {
+				displayName = "Uniforme Chef Artilleur";
+				description = "Uniforme Chef Artilleur. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+			class doom_442_kripto_p1_vest {
+				displayName = "Armure Chef Artilleur";
+				description = "Armure Chef Artilleur. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+			class IP_uniform_CPA {
+				displayName = "Uniforme soldat artilleur";
+				description = "Armure soldat artilleur. Niveau 2";
+				price = 300;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 2;
+			};
+
+			class IP_armor_CP {
+				displayName = "Uniforme soldat artilleur";
+				description = "Armure soldat artilleur. Niveau 2";
+				price = 300;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 2;
+			};
+			
+			class TPJUniform {
+				displayName = "Uniforme Chef BARC";
+				description = "Uniforme Chef BARC. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+			class TPASArmor {
+				displayName = "Armure Chef BARC";
+				description = "Armure Chef BARC. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+
+			class TPPUniform {
+				displayName = "Uniforme soldat BARC";
+				description = "Uniforme soldat BARC. Niveau 2";
+				price = 300;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 2;
+			};
+
+			class TPHTArmor {
+				displayName = "Armure soldat BARC";
+				description = "Armure soldat BARC. Niveau 2 ";
+				price = 300;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 2;
+			};
+
+
+			class doom_442_uniform_gross {
+				displayName = "Uniforme Chef Expert en explosif";
+				description = "Uniforme Chef BARC. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+			class doom_442_gross_p1_vest {
+				displayName = "Armure Chef Expert en explosif";
+				description = "Armure Chef BARC. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+
+
+			class doom_442_uniform_p1 {
+				displayName = "Uniforme soldat Expert en explosif";
+				description = "Uniforme soldat Expert en explosif. Niveau 2";
+				price = 300;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 2;
+			};
+
+
+
+			class doom_442_p1_vest {
+				displayName = "Armure soldat Expert en explosif";
+				description = "Armure soldat Expert en explosif. Niveau 2";
+				price = 300;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 2;
+			};
+
+
+			class TPAHUniform {
+				displayName = "Uniforme Chef Ingénieur";
+				description = "Uniforme Chef Ingénieur. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+
+			class TPAHArmor {
+				displayName = "Armure Chef Ingénieur";
+				description = "Armure Chef Ingénieur. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+			class TPESHelmet {
+				displayName = "Casque Chef et Soldat Ingénieur";
+				description = "Casque Chef et Soldat Ingénieur. Niveau 2";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 2;
+			};
+
+
+			class IP_uniform_81st_Base {
+				displayName = "Uniforme soldat Ingénieur";
+				description = "Uniforme soldat Ingénieur. Niveau 2";
+				price = 300;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 2;
+			};
+
+			class IP_armor_81st_Medic_Air_armor {
+				displayName = "Armure soldat Ingénieur";
+				description = "Armure soldat Ingénieur. Niveau 2";
+				price = 300;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 2;
+			};
+
+			class doom_442_uniform_2_p1_m {
+				displayName = "Uniforme Chef Médecin";
+				description = "Uniforme Chef Médecin. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+			class doom_442_p1_vest_2_m {
+				displayName = "Armure Chef Médecin";
+				description = "Armure Chef Médecin. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+			class doom_442_uniform_p1_anders {
+				displayName = "Uniforme Chef Sharp trooper";
+				description = "Uniforme Chef Sharp trooper. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+			class doom_442_anders_p1_vest {
+				displayName = "Armure Chef Sharp trooper";
+				description = "Armure Chef Sharp trooper. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+			class TPSUniform {
+				displayName = "Uniforme soldat Sharp trooper";
+				description = "Uniforme soldat Sharp trooper. Niveau 2";
+				price = 300;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 2;
+			};
+
+			class TPTArmor {
+				displayName = "Armure soldat Sharp trooper";
+				description = "Armure soldat Sharp trooper. Niveau 2";
+				price = 300;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 2;
+			};
+
+			class doom_442_uniform_p1_crain_d {
+				displayName = "Uniforme Chef Soldat Lourd";
+				description = "Uniforme Chef Soldat Lourd. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+
+				class doom_442_gross_p1_vest_d {
+				displayName = "Armure Chef Soldat Lourd";
+				description = "Armure Chef Soldat Lourd. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+			class IP_327th_Oracle_helmet {
+				displayName = "Casque Reynor";
+				description = "Réservé à Reynor. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+			class IP_visor_TPCMDA {
+				displayName = "Viseur du casque de Reynor";
+				description = "Réservé à Reynor. Niveau 3";
+				price = 0;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+			class IP_uniform_SSSGT {
+				displayName = "Uniforme soldat Z6";
+				description = "Uniforme soldat Z6, réservé aux soldats utilisant les Z6. Niveau 2";
+				price = 300;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 2;
+			};
+
+			class IP_armor_SSAB {
+				displayName = "Armure soldat Z6";
+				description = "Armure soldat Z6, réservé aux soldats utilisant les Z6. Niveau 2";
+				price = 300;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 2;
+			};
+
+
+			class TPPFHelmet {
+				displayName = "Casque Pilote Kamikaze";
+				description = "Casque pour le pilote erka. Niveau 2";
+				price = 300;
+				stock = 50;
+				tracking = 1;
+				permissionLevel = 2;
+			};
+			class B_carryall_satellite {
+				displayName = "Sac Satellite";
+				description = "QG satellite déployable";
+				price = 200;
+				stock = 10;
+				tracking = 1;
+				permissionLevel = 3;
+			};
+
+
+        };
+		
+		
+		
+		class Items {
+          displayname = "Utilitaire et Munition";
+            kindOf = "Items";
+            tracking = 1;
+			
+			class SWOP_DC15_Mag {
+                displayName = "Mun DC15S (x3)";
+                description = "Munition standard";
+                price = 0;
+				amount = 3;
+                stock = 100;
+				tracking = 1;
+			};
+			class ACE_morphine {
+                displayName = "Morphine (x3)";
+                description = "Equipement medical";
+                price = 0;
+				amount = 3;
+                stock = 100;
+				tracking = 1;
+			};
+			class ACE_EarPlugs {
+                displayName = "Bab";
+                description = "Bouchons d'oreilles";
+                price = 0;
+				stock = 100;
+				tracking = 1;
+			};
+			class tf_anprc152 {
+                displayName = "Communicateur";
+                description = "Communicateur Clone";
+                price = 0;
+				stock = 100;
+				tracking = 1;
+			};
+			class swop_SmokeShell {
+                displayName = "Fumigene";
+                description = "Grenade fumigene";
+                price = 20;
+				amount = 3;
+                stock = 100;
+				tracking = 1;
+			};
+			class swop_SmokeShellBlue {
+                displayName = "Fumigène Bleu";
+                description = "Grenade fumigene";
+                price = 20;
+				amount = 3;
+                stock = 100;
+				tracking = 1;
+			};
+			class swop_SmokeShellRed {
+                displayName = "Fumigene Rouge";
+                description = "Grenade fumigene";
+                price = 20;
+				amount = 3;
+                stock = 100;
+				tracking = 1;
+			};
+			class swop_SmokeShellGreen {
+                displayName = "Fumigene verte";
+                description = "Grenade fumigene";
+                price = 20;
+				amount = 3;
+                stock = 100;
+				tracking = 1;
+			};
+			class ACE_fieldDressing {
+                displayName = "Bandages(x10)";
+                description = "Bandages simples";
+                price = 0;
+				amount = 10;
+                stock = 100;
+				tracking = 1;
+			};
+			
+			class ACE_epinephrine {
+				displayName = "Epinephrine X3";
+				description = "Dotation de base pour infirmier";
+				price = 0;
+				amount = 3;
+				stock = 200;
+                tracking = 1;
+			};
+			class ACE_bloodIV {
+				displayName = "Poche de sang x4";
+				description = "Dotation de base pour infirmier";
+				price = 0;
+				amount = 4;
+				stock = 200;
+                tracking = 1;
+			};
+			
+			class ACE_salineIV_500 {
+				displayName = "Poche de saline x4";
+				description = "Dotation de base pour infirmier";
+				price = 0;
+				amount = 4;
+				stock = 200;
+                tracking = 1;
+			};
+			
+			class ACE_tourniquet {
+				displayName = "Tourniquet";
+				description = "Dotation de base pour infirmier";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+			};
+			class ACE_quikclot {
+				displayName = "Bandage Hémostatique x5";
+				description = "Dotation de base pour infirmier";
+				price = 0;
+				amount = 5;
+				stock = 200;
+                tracking = 1;
+			};
+			class ACE_elasticBandage {
+				displayName = "Bandage compressif x5";
+				description = "Dotation de base pour infirmier";
+				price = 0;
+				amount = 5;
+				stock = 200;
+                tracking = 1;
+			};
+			class ACE_packingBandage {
+				displayName = "Bande extensible x5";
+				description = "Dotation de base pour infirmier";
+				price = 0;
+				amount = 5;
+				stock = 200;
+                tracking = 1;
+			};
+			class ACE_personalAidKit {
+				displayName = "Trousse sanitaire";
+				description = "Dotation de base pour infirmier";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+			};
+			class ACE_surgicalKit {
+				displayName = "Trousse Chirurgicale";
+				description = "Dotation de base pour infirmier";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+			};
+			
+			class ACE_Flashlight_XL50 {
+				displayName = "Lampe pour carte";
+				description = "Dotation de base du clone";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+			};
+
+			class ACE_EntrenchingTool {
+				displayName = "Outil de tranchée";
+				description = "Dotation de base du clone";
+				price = 5;
+				stock = 100;
+                tracking = 1;
+			};
+
+			class ACE_wirecutter {
+				displayName = "Pince coupante";
+				description = "Dotation de base du clone";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+			};
+
+			class ACE_SpottingScope {
+				displayName = "Télescope de visé";
+				description = "Spécialisation Clone lvl 2";
+				price = 20;
+				stock = 20;
+                tracking = 1;
+				permissionLevel = 2;
+			};
+
+			class ToolKit {
+				displayName = "Trousse à outil";
+				description = "Spécialisation Clone ING";
+				price = 20;
+				stock = 100;
+                tracking = 1;
+			};
+
+			class OPTRE_NVG {
+				displayName = "JVN";
+				description = "Dotation de base du clone";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+			};
+			class SWOP_visor_w {
+				displayName = "Clone Visor";
+				description = "Dotation du Barc et du SGT lvl 2";
+				price = 100;
+				stock = 200;
+                tracking = 1;
+				permissionLevel = 2;
+			};
+			
+			class SWOP_Valken38XBlasterRifle_Mag {
+				displayName = "Muniton Valken";
+				description = "Munition";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+			};
+
+			class swop_RepShotgun_Mag {
+				displayName = "Munition Shotgun";
+				description = "Mun";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+			};
+
+			class SWOP_dlt20ascope {
+				displayName = "Viseur DLT20";
+				description = "Dotation de base du clone";
+				price = 500;
+				stock = 100;
+                tracking = 1;
+			};
+			
+			class SWOP_DC17Pistol_Mag {
+				displayName = "Munition DC17";
+                description = "Dotation du gradé lvl 3";
+                price = 10;
+                stock = 50;
+                permissionLevel = 3;
+                tracking = 1;
+			};	
+			
+			class swop_dc15a_zommscopex10range {
+				displayName = "Viseur DC15A LE x 10";
+				description = "Dotation du clone lvl 2";
+				price = 450;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 2;
+			};
+			
+			class swop_dc15a_zommscopex8 {
+				displayName = "Viseur DC15A LE x 8";
+				description = "Dotation du clone lvl 2";
+				price = 400;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 2;
+			};
+
+			class SWOP_dc15xBlasterRifle_Mag {
+				displayName = "Munition DC15X";
+				description = "Mun";
+				price = 0;
+				stock = 100;
+                tracking = 2;
+			};
+			
+			class DCStun_Mag {
+				displayName = "Stun munition";
+				description = "Mun";
+				price = 0;
+				stock = 100;
+                tracking = 2;
+			};
+			
+			class SWOP_DC15ABlasterRifle_Full_Mag {
+				displayName = "Munition DC15A Full";
+				description = "Mun";
+				price = 0;
+				stock = 100;
+                tracking = 2;
+			};
+			
+			class SWOP_DC15ABlasterRifle_Low_Mag {
+				displayName = "Munition DC15A Low";
+				description = "Mun";
+				price = 0;
+				stock = 100;
+                tracking = 2;
+			};
+
+			class 300Rnd_BlasterLaser_Belt {
+				displayName = "Munition Z6";
+				description = "Mun";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+			};
+
+			class SWOP_DC15ABlasterRifle_Mag {
+				displayName = "Munition DC15A";
+				description = "Dotation de base du clone";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+			};
+			
+			class SCI_RPS6_HEAA {
+				displayName = "Munition lance Rocket HEAA";
+				description = "Dotation du clone";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+			};
+			class SCI_RPS6_HEDP {
+				displayName = "Munition lance Rocket HEDP";
+				description = "Dotation du clone";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+			};
+			
+			class SWOP_termDet_G {
+				displayName = "Grenade détonator";
+				description = "Dotation de base du clone";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+			};
+			class SW_PersonalShield_Mag {
+				displayName = "Bouclier sphère";
+				description = "Munition";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+			};
+
+			class SW_halfshield_Mag {
+				displayName = "Bouclier arme";
+				description = "Dotation clone";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+			};
+
+					
+			class scoutElectroBinoculars_F {
+				displayName = "Binocular";
+				description = "Dotation du clone lvl 2";
+				price = 300;
+				stock = 50;
+                tracking = 3;
+				permissionLevel = 2;
+			};
+			
+			class ACE_DefusalKit {
+				displayName = "Kit de désamorçage";
+				description = "Dotation de base du clone EXP Explosif";
+				price = 20;
+				stock = 100;
+                tracking = 1;
+				
+			};
+			class ACE_M26_Clacker {
+				displayName = "Dispositif de mise à feu";
+				description = "Dotation de base du clone EXP Explosif lvl 2";
+				price = 20;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 2;
+			};
+			class TermMine_Mag {
+				displayName = "Explosif A";
+				description = "Dotation de base du clone EXP Explosif lvl 2";
+				price = 20;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 2;
+			};
+			class TermMineB_Mag {
+				displayName = "Explofif B";
+				description = "Dotation de base du clone EXP Explosif lvl 2";
+				price = 20;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 2;
+			};
+			class TermMineC_Mag {
+				displayName = "Explofif C";
+				description = "Dotation de base du clone EXP Explosif lvl 2";
+				price = 20;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 2;
+			};
+			class M168_Remote_Mag {
+				displayName = "M168";
+				description = "Dotation de base du clone EXP Explosif lvl 2";
+				price = 20;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 2;
+			};
+			class C12_Remote_Mag {
+				displayName = "C-12";
+				description = "Dotation de base du clone EXP Explosif lvl 2";
+				price = 20;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 2;
+			};
+			
+			
+			class swop_EMP_Remote_Mag {
+				displayName = "EMP Mine";
+				description = "Dotation de base du clone EXP Explosif lvl 2";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 2;
+			};
+			class ACE_Clacker {
+				displayName = "Dispositif de mise à feu";
+				description = "Dotation de base du clone lvl 2";
+				price = 0;
+				stock = 200;
+                tracking = 1;
+				permissionLevel = 2;
+			};
+
+			class ACE_CableTie {
+				displayName = "Lien d'attache";
+				description = "Dotation clone";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+			};
+			
+			class MRH_FoldedSatcomAntena {
+				displayName = "Antenne portative";
+				description = "Antenne portative pour logiciel satellite";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 1;
+			};
+			class Laserbatteries {
+				displayName = "Batteries Laser";
+				description = "Batterie pour jumelle et autres outils";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+			};
+			class MRH_tacticalDisplay {
+				displayName = "Tablette tactique";
+				description = "Tablette tactique pour satellite";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 0;
+			};
+			class MRH_SoldierTab {
+				displayName = "Tablette Clone";
+				description = "Tablette regroupant des informations sur l'utilisateur clone";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+			};
+			class 501RD_ItemStretcher {
+				displayName = "Brancard";
+				description = "Brancard pour médecin";
+				price = 40;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 1;
+			};
+			class MRH_Map {
+				displayName = "Map dépliable";
+				description = "Carte déployable sur le terrain";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+			};
+			class MRH_BluFortransponder {
+				displayName = "Transpondeur clone";
+				description = "Permet une identification des clones via satellite";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+			};
+			
+			
+		};
+
+        
+        
+    };
+
+
+//a different set of buyables
+    class Casques {        
+		class Wearables {
+            kindOf = "Wearables";
+            displayName = "Equipements";
+
+            //items of this category:
+            			
+			class SWOP_Clonetrooper_2ARF501_helmet {
+                displayName = "Casque gradé ARF";
+                description = "Un casque descerné aux gradés de la spécialisation ARF lvl 4";
+                price = 4000;
+                stock = 5;
+                permissionLevel = 4;
+                        tracking = 1;
+				};			   
+			class SWOP_Clonetrooper_ARF501blizz_helmet {
+                displayName = "Casque ARF Personnalisé";
+                description = "Un casque de la spécialisation ARF lvl 2";
+                price = 2000;
+                stock = 5;
+                permissionLevel = 2;
+                 tracking = 1;
+				};				
+			class SWOP_Clonetrooper_ARF501boomer_helmet {
+                displayName = "Casque ARF Personnalisé";
+                description = "Un casque de la spécialisation ARF lvl 1";
+                price = 1800;
+                stock = 5;
+                permissionLevel = 1;
+                tracking = 1;
+				};				
+			class SWOP_Clonetrooper_ATRT_HGT501_helmet {
+                displayName = "Casque de démineur du 501st Régiment";
+                description = "Un casque de la démineur";
+                price = 0;
+                stock = 50;
+                tracking = 1;						
+				};
+			class SWOP_Clonetrooper_pilot_helmet501hawk {
+                displayName = "Casque de pilote du 501st Régiment";
+                description = "Un casque de de pilote personnalisé lvl 3";
+                price = 3500;
+                stock = 5;
+                permissionLevel = 3;
+                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_pilot_helmet501raven {
+                displayName = "Casque de pilote du 501st Régiment";
+                description = "Un casque de de pilote personnalisé lvl 4";
+                price = 6000;
+                stock = 5;
+                permissionLevel = 4;
+                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_pilot_helmet501 {
+                displayName = "Casque de pilote du 501st Régiment";
+                description = "Un casque de de pilote 501st";
+                price = 0;
+                stock = 50;
+                tracking = 1;
+				};				
+			class SWOP_CloneBARCV2501 {
+                displayName = "Casque de BARC trooper du 501st Régiment";
+                description = "Un casque de BARC trooper 501st";
+                price = 0;
+                stock = 50;
+                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_501angel_helmet {
+                displayName = "C.MedPa2";
+                description = "Un casque médecin personnalisé 501st lvl 6";
+                price = 2500;
+                stock = 5;
+                permissionLevel = 6;
+                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_501appo_helmet {
+                displayName = "à mettre";
+                description = "Un casque soldat personnalisé 501st lvl 6";
+                price = 1500;
+                stock = 5;
+                permissionLevel = 6;
+                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_501athena_helmet {
+                displayName = "C.HnrPj3";
+                description = "Un casque honorifique 501st comportant les yeux de jaig lvl 8";
+                price = 5000;
+                stock = 1;
+                permissionLevel = 8;
+                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_501bobs_helmet {
+                displayName = "C.GrdPo3";
+                description = "Un casque de gradé 501st lvl 8";
+                price = 5000;
+                stock = 1;
+                permissionLevel = 8;
+                tracking = 1;
+				};
+			class SWOP_Clonetrooper_501bondoer_helmet {
+				displayName = "C.SldPh3";
+                description = "Un casque de soldat 501st lvl 8";
+                price = 5000;
+                stock = 3;
+                permissionLevel = 8;
+                tracking = 1;					
+				};
+			class SWOP_Clonetrooper_501calo_helmet {
+                displayName = "C.MedPa3";
+                description = "Un casque de médecin 501st lvl 8";
+                price = 5000;
+                stock = 3;
+                permissionLevel = 8;
+                tracking = 1;									
+				};
+			class SWOP_Clonetrooper_501clutch_helmet {
+                displayName = "C.GrdPm3";
+                description = "Un casque de gradé 501st lvl 8";
+                price = 5000;
+                stock = 3;
+                permissionLevel = 8;
+                tracking = 1;
+				};
+			class SWOP_Clonetrooper_501crusader_helmet {
+                displayName = "C.SldPgS";
+                description = "Un casque de gradé 501st lvl 6";
+                price = 7000;
+                stock = 1;
+                permissionLevel = 6;
+                tracking = 1;
+				};
+			class SWOP_Clonetrooper_501darkstar_helmet {
+                displayName = "C.GrdPm2";
+                description = "Un casque de gradé 501st lvl 6";
+                price = 2500;
+                stock = 4;
+                permissionLevel = 6;
+                tracking = 1;
+				};
+			class SWOP_Clonetrooper_501delta_helmet {
+                displayName = "C.GrdPoS";
+                description = "Un casque de gradé 501st lvl 6";
+                price = 2500;
+                stock = 4;
+                permissionLevel = 6;
+                tracking = 1;
+				};
+			class SWOP_Clonetrooper_501diamond_helmet {
+                displayName = "C.SldPe1";
+                description = "Un casque de soldat 501st lvl 6";
+                price = 1500;
+                stock = 1;
+                permissionLevel = 6;
+                tracking = 1;
+				};			
+			class SWOP_Clonetrooper_501dino_helmet {
+                displayName = "C.PltPc2";
+                description = "Un casque de pilote 501st lvl 7";
+                price = 2500;
+                stock = 1;
+                permissionLevel = 7;
+                tracking = 1;
+				};	
+				
+			class SWOP_Clonetrooper_501dogma_helmet {
+                displayName = "C.SldPf3";
+                description = "Un casque de soldat 501st lvl 7";
+                price = 3500;
+                stock = 2;
+                permissionLevel = 7;
+                tracking = 1;
+				};
+				
+			class SWOP_Clonetrooper_501_exphelmet {
+                displayName = "C.SldPg2";
+                description = "Un casque de soldat 501st lvl 7";
+                price = 2500;
+                stock = 2;
+                permissionLevel = 7;
+                tracking = 1;
+				};
+				
+			class SWOP_Clonetrooper_501grant_helmet {
+                displayName = "C.SldPe3";
+                description = "Un casque de soldat 501st lvl 7";
+                price = 3500;
+                stock = 1;
+                permissionLevel = 7;
+                tracking = 1;
+					};		
+					
+			class SWOP_Clonetrooper_501hardcase_helmet {
+                displayName = "C.SldPe2";
+                description = "Un casque de soldat 501st lvl 6";
+                price = 2500;
+                stock = 5;
+                permissionLevel = 6;
+                tracking = 1;
+				
+				};
+			class SWOP_Clonetrooper_501hawk_helmet {
+                displayName = "C.PltPc3";
+                description = "Un casque de pilote 501st lvl 7";
+                price = 3500;
+                stock = 5;
+                permissionLevel = 7;
+                                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_501hobo_helmet {
+                displayName = "C.PltPd3";
+                description = "Un casque de pilote 501st lvl 7";
+                price = 3500;
+                stock = 5;
+                permissionLevel = 7;
+                                tracking = 1;
+				};
+			class SWOP_Clonetrooper_501jarkow_helmet {
+                displayName = "C.HnrPi3";
+                description = "Un casque honorifique 501st lvl 7";
+                price = 3500;
+                stock = 5;
+                permissionLevel = 7;
+                                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_501jax_helmet {
+                displayName = "C.GrdPn2";
+                description = "Un casque de gradé 501st lvl 7";
+                price = 2500;
+                stock = 4;
+                permissionLevel = 7;
+                                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_501jay_helmet {
+                displayName = "C.RrPl3";
+                description = "Un casque rare 501st lvl 8";
+                price = 8000;
+                stock = 1;
+                permissionLevel = 8;
+                                tracking = 1;
+				};
+			class SWOP_Clonetrooper_501jesse_helmet {
+                displayName = "C.SldPf1";
+                description = "Un casque de soldat 501st lvl 6";
+                price = 1500;
+                stock = 4;
+                permissionLevel = 6;
+                                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_Kaser_helmet {
+				displayName = "C.GrdPmS";
+                description = "Un casque de gradé 501st lvl 4";
+                price = 9000;
+                stock = 4;
+                permissionLevel = 4;
+                                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_501kilo_helmet {
+                displayName = "C.GrdPn3";
+                description = "Un casque de gradé 501st lvl 6";
+                price = 3500;
+                stock = 3;
+                permissionLevel = 6;
+                                tracking = 1;		
+				};
+			class SWOP_Clonetrooper_501king_helmet {
+                displayName = "C.RrPl2";
+                description = "Un casque rare 501st lvl 6";
+                price = 3500;
+                stock = 2;
+                permissionLevel = 6;
+                                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_501Kitty_helmet {
+                displayName = "C.MedPbS";
+                description = "Un casque de médecin 501st lvl 6";
+                price = 8000;
+                stock = 2;
+                permissionLevel = 6;
+                                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_501kix_helmet {
+                displayName = "C.SldPg1";
+                description = "Un casque de soldat 501st lvl 6";
+                price = 1500;
+                stock = 8;
+                permissionLevel = 6;
+                                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_501maverick_helmet {
+                displayName = "C.MedPaS";
+                description = "Un casque de médecin 501st lvl 6";
+                price = 8000;
+                stock = 2;
+                permissionLevel = 6;
+                                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_501nexu_helmet {
+                displayName = "C.PltPcS";
+                description = "Un casque de pilote 501st lvl 6";
+                price = 8000;
+                stock = 2;
+                permissionLevel = 6;
+                                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_501_Rookhelmet {
+                displayName = "C.GrdPm1";
+                description = "Un casque de gradé 501st lvl 6";
+                price = 1500;
+                stock = 10;
+                permissionLevel = 6;
+                                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_501ruthless_helmet {
+                displayName = "C.MedPa1";
+                description = "Un casque de médecin 501st lvl 7";
+                price = 1500;
+                stock = 10;
+                permissionLevel = 7;
+                                tracking = 1;	
+				};
+			class SWOP_Clonetrooper_501sabre_helmet {
+                displayName = "C.RrPkS";
+                description = "Un casque Rare 501st lvl 8";
+                price = 50000;
+                stock = 1;
+                permissionLevel = 8;
+                                tracking = 1;	
+				};		
+			class SWOP_Clonetrooper_501scar_helmet {
+                displayName = "C.PltPc1";
+                description = "Un casque de pilote 501st lvl 6";
+                price = 1500;
+                stock = 10;
+                permissionLevel = 6;
+                                tracking = 1;
+				};
+		
+			class SWOP_Clonetrooper_501sorensic_helmet {
+                displayName = "C.RrPl3";
+                description = "Un casque rare 501st lvl 7";
+                price = 3500;
+                stock = 3;
+                permissionLevel = 7;
+                                tracking = 1;
+				};
+			class SWOP_Clonetrooper_501spar_helmet {
+                displayName = "C.RrPk3";
+                description = "Un casque rare 501st lvl 8";
+                price = 3500;
+                stock = 3;
+                permissionLevel = 8;
+                tracking = 1;
+				};
+			class SWOP_Clonetrooper_501sparrow_helmet {
+                displayName = "C.HnrPj2";
+                description = "Un casque honorifique 501st lvl 7";
+                price = 3500;
+                stock = 3;
+                permissionLevel = 7;
+                                tracking = 1;
+				};
+			class SWOP_Clonetrooper_501spidzer_helmet {
+                displayName = "C.SldPeS";
+                description = "Un casque de soldat 501st lvl 8";
+                price = 8500;
+                stock = 3;
+                permissionLevel = 8;
+                                tracking = 1;
+				};
+			class SWOP_Clonetrooper_501strike_helmet {
+                displayName = "C.HnrPi1";
+                description = "Un casque honorifique 501st lvl 6";
+                price = 1500;
+                stock = 3;
+                permissionLevel = 6;
+                                tracking = 1;
+				};
+			class SWOP_Clonetrooper_501strips_helmet {
+                displayName = "C.MedPb1";
+                description = "Un casque de médecin 501st lvl 6";
+                price = 1500;
+                stock = 3;
+                permissionLevel = 6;
+                                tracking = 1;
+				};
+			class SWOP_Clonetrooper_501talverd_helmet {
+                displayName = "C.HnrPiS";
+                description = "Un casque honorifique 501st lvl 6 ";
+                price = 10000;
+                stock = 3;
+                permissionLevel = 6;
+                                tracking = 1;
+				};
+			class SWOP_Clonetrooper_501texan_helmet {
+                displayName = "C.RrPk1";
+                description = "Un casque rare 501st lvl 6";
+                price = 1500;
+                stock = 3;
+                permissionLevel = 6;
+                                tracking = 1;
+				};
+			
+			class SWOP_Clonetrooper_501tup_helmet {
+                displayName = "C.SldPh1";
+                description = "Un casque de soldat 501st lvl 6";
+                price = 1500;
+                stock = 3;
+                permissionLevel = 6;
+                                tracking = 1;
+				};	
+			class SWOP_Clonetrooper_501_vethelmet {
+                displayName = "C.SldPg3";
+                description = "Un casque de soldat 501st lvl 6";
+                price = 3500;
+                stock = 3;
+                permissionLevel = 6;
+                                tracking = 1;
+				};
+			class SWOP_Clonetrooper_501wraith_helmet {
+                displayName = "C.HnrPi2";
+                description = "Un casque honorifique 501st lvl 7";
+                price = 3500;
+                stock = 3;
+                permissionLevel = 7;
+                tracking = 1;
+				};				
+            };
+    };
+		
+	class bar_ext {        
+		class Vehicles {
+            kindOf = "Vehicles";
+            displayName = "Boissons";
+	
+			class TGV_BeletteBeer {
+                displayName = "Boisson Forte";
+                description = "Boissson Locale des montagnes Du KALU";
+                price = 50;
+                stock = 100;
+                permissionLevel = 1;
+                tracking = 1;
+				};
+				
+			};
+	};
+		
+		
+	class Logistique {
+		class items {
+			displayName = "Defenses";
+			kindOf = "Other";
+
+
+			class Land_HBarrier_1_F {
+				displayName = "H-Barrier (1)";
+				price = 200;
+				stock = 20;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+
+			class Land_HBarrier_3_F {
+				displayName = "H-Barrier (3)";
+				price = 350;
+				stock = 15;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+
+			class Land_HBarrier_5_F {
+				displayName = "H-Barrier (5)";
+				price = 500;
+				stock = 10;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+
+			class Land_BagFence_Short_F {
+				displayName = "Sandbags (short)";
+				price = 200;
+				stock = 20;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+
+			class Land_BagFence_Long_F {
+				displayName = "Sandbags (long)";
+				price = 300;
+				stock = 20;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+
+			class Land_TripodScreen_01_large_F {
+				displayName = "Ecran satellite";
+				price = 150;
+				stock = 50;
+				Permissionlevel = 2;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+	
+			class Land_Target_Dueling_01_F {
+				displayName = "Cible d'entrainement Duel";
+				price = 10;
+				stock = 500;
+				Permissionlevel = 0;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+	
+			class Target_PopUp_Moving_Acc2_F {
+				displayName = "Cible d'entrainement 1";
+				price = 10;
+				stock = 500;
+				Permissionlevel = 0;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+			
+			class CamoNet_BLUFOR_F {
+				displayName = "Filet de camouflage";
+				price = 10;
+				stock = 100;
+				Permissionlevel = 1;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+	
+			class Land_OPTRE_ConstructionBarrier1 {
+				displayName = "Protection";
+				price = 5;
+				stock = 100;
+				Permissionlevel = 1;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+	
+			class Land_OPTRE_M72_barrierBlk {
+				displayName = "Protection déployable";
+				price = 20;
+				stock = 100;
+				Permissionlevel = 1;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+	
+			class Downy_Barricade {
+				displayName = "Protection";
+				price = 5;
+				stock = 100;
+				Permissionlevel = 1;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+	
+			class SWOP_Barricade {
+				displayName = "Protection";
+				price = 5;
+				stock = 100;
+				Permissionlevel = 1;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+	
+			class Land_OPTRE_blast_barrier_dest {
+				displayName = "Protection";
+				price = 5;
+				stock = 100;
+				Permissionlevel = 1;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+	
+			
+			class Land_TripodScreen_01_dual_v2_F {
+				displayName = "Ecran pour Cibles";
+				price = 50;
+				stock = 100;
+				Permissionlevel = 2;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+	
+		};
+
+	};
+ 
+};
+
+
+
+	
+	
+	
+////////////INIT object /////////////////////// 
+	
+
+class Extended_Init_EventHandlers {
+   class PortableHelipadLight_01_green_F {
+       class bobzap_suvInit {
+           init = "diag_log _this";
+            clientInit = "diag_log _this";
+            serverInit = "diag_log _this";
+        };
+    };
+};
+
+/////////////////////GRAD note ////////////////////
+	
+	class GRAD_leaveNotes {
+		playerDistance = 1;             
+		actOffset[] = {0,0,0.1};        
+		actDist = 2;                    
+		noteObject = "Land_Tablet_02_F";  
+		startAmount = 10;               
+		visibleHandwriting = 1;         
+		canWriteDefault = 1;            
+		canInspectDefault = 1;          
+	};
+
