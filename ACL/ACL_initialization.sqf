@@ -9,12 +9,12 @@ if (isServer) then
 {
 	ACL_PARAM_Language = "french"; //Définir la langue parlée par les civils (french/english)
 	ACL_PARAM_AllowDetection = true; //Autoriser les civils à informer d'une présence hostile
-	ACL_PARAM_DetectionRadius = 500; //Rayon de détection des civils (si ACL_PARAM_AllowDetection = true)
+	ACL_PARAM_DetectionRadius = 200; //Rayon de détection des civils (si ACL_PARAM_AllowDetection = true)
 	ACL_PARAM_Murder = false; //Ne pas toucher
-	ACL_PARAM_Cooperation = 65; //Taux de coopération 	
-	ACL_Impact_Murder = 20; // Impact sur la coopération suite à un meurtre
-	ACL_Level_Murder = 30; // niveau tolérable avant émeute
-	ACL_Ratio_Revolt = 50; // pourcentage de civils qui se révoltent
+	ACL_PARAM_Cooperation = 50; //Taux de coopération 	
+	ACL_Impact_Murder = 5; // Impact sur la coopération suite à un meurtre
+	ACL_Level_Murder = 40; // niveau tolérable avant émeute
+	ACL_Ratio_Revolt = 100; // pourcentage de civils qui se révoltent
 	CivGrp = [];
 	Tableau_initServeur = ["ACL_PARAM_Language","ACL_PARAM_Cooperation","ACL_PARAM_AllowDetection","ACL_PARAM_DetectionRadius","ACL_PARAM_Murder","ACL_Impact_Murder","CivGrp","ACL_Level_Murder"]; 
 	{
@@ -36,13 +36,11 @@ sleep 2;
 //[player] spawn ACL_fnc_keys;
 
 // ------------------ AJOUTER AUTANT DE FOIS QU'IL Y A DE SECTEURS ------ [TYPE DE CIVILS, "NOM_MARQUEUR", NOMBRE DE CIVILS] execVM
-_s1 = [0, "marker_1", 4] execVM "ACL\ACL_spawn.sqf";
-_s1 = [0, "marker_80", 4] execVM "ACL\ACL_spawn.sqf";
-_s1 = [0, "marker_2", 4] execVM "ACL\ACL_spawn.sqf";
-_s1 = [0, "marker_20", 4] execVM "ACL\ACL_spawn.sqf";
-_s1 = [0, "marker_6", 4] execVM "ACL\ACL_spawn.sqf";
-_s1 = [0, "marker_39", 4] execVM "ACL\ACL_spawn.sqf";
-//_s1 = [0, "marker_2", 10] execVM "ACL\ACL_spawn.sqf";
+//_s1 = [0, "marker_1", 5] execVM "ACL\ACL_spawn.sqf";
+
+//_s1 = [0, "marker_2", 5] execVM "ACL\ACL_spawn.sqf";
+
+
 
 
 //---Modifier le valeur pour déterminer le niveau de coopération avant la riposte et le pourcentage de civils armés ---[pourcentage] execVM
@@ -50,8 +48,10 @@ _s1 = [0, "marker_39", 4] execVM "ACL\ACL_spawn.sqf";
 
 
 sleep 5;
+
+
 waitUntil {ACL_PARAM_Cooperation < ACL_Level_Murder};
-_revolte = [ACL_Ratio_Revolt] execVM "ACL\ACL_revolt.sqf";
+_revolte = [ACL_Ratio_Revolt] execVM "ACL\ACL_revolt.sqf", execVM "UC\Chefrevolt\chefr.sqf";
 
 
 

@@ -72,7 +72,7 @@ if (IA_liberation_debug) then {private _text = format ["[IA LIBERATION] [DEBUG] 
 // call compile preprocessFileLineNumbers "scripts\Init_UPSMON.sqf";
 
 
-//execVM "ACL\ACL_initialization.sqf";
+execVM "ACL\ACL_initialization.sqf";
 
 //if (true) exitWith {};
 

@@ -50,7 +50,7 @@ class CfgSounds {
 	class vum
 	{
 		name = "vum";
-		sound[] = {"\sound\vum.ogg", db+10, 1};
+		sound[] = {"\sound\vum.ogg", db-25, 1};
 		titles[] = {};
 	};
 	class up_impact
@@ -398,6 +398,39 @@ class CfgGradFortifications {
 			buildTime = 5;
 	//remoteExecCall ["fnc_someScriptedFunction", targets, JIP];
         };
+		class Land_WaterTank_03_F {
+           boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 20;
+            demolitionTime = 4;
+			buildTime = 3;
+		};
+         class Box_C_UAV_06_F {
+           boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 20;
+            demolitionTime = 4;
+            onBuildComplete = "(_this select 1)  remoteExecCall ['grad_moneymenu_fnc_setStorage', 0]";
+			buildTime = 3;
+		};
+
+		class Land_OPTRE_fusion_coil {
+            boundingBoxSize = 1;
+            canFloat = 1;
+            canCollide = 1;
+            size = 3;
+            demolitionTime = 10;
+			buildTime = 5;
+			onBuildComplete = "execVM 'UC\marker\marker.sqf', execVM 'UC\Attack\ia.sqf', execVM 'UC\effet\effect.sqf'";  //add this code ine the init box when object is built
+        };
+
+
+
+
+
+
     };
 	
 	    
@@ -2150,6 +2183,31 @@ class CfgGradBuymenu {
 				price = 50;
 				stock = 100;
 				Permissionlevel = 2;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+
+
+			class Land_WaterTank_03_F {
+				displayName = "Ressource minérale";
+				price = 500;
+				stock = 100;
+				Permissionlevel = 0;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+
+            class Box_C_UAV_06_F {
+				displayName = "Caisse pour Transaction";
+				price = 500;
+				stock = 100;
+				Permissionlevel = 0;
+				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
+			};
+
+            class Land_OPTRE_fusion_coil {
+				displayName = "Rayon de Contrôle de Zone";
+				price = 500;
+				stock = 100;
+				Permissionlevel = 0;
 				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
 			};
 	

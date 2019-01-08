@@ -17,12 +17,12 @@ _ID5 = floor (random 9);
 _IDnumber = format ["%1%2%3%4%5",_ID1,_ID2,_ID3,_ID4,_ID5],
 
 // -------------------------------- VARIABLES ASSIGNATION
-_unitAge = floor (25 + random 200);
+_unitAge = floor (30 + random 50);
 _currentYear = (date select 0);
 
-_birth_day = 10 + (floor (random 68));
-_birth_month = 1 + floor (random 98);
-_birth_year = (_currentYear - _unitAge + 5412);
+_birth_day = 1 + (floor (random 30));
+_birth_month = 1 + floor (random 11);
+_birth_year = (_currentYear - _unitAge);
 _birth_date = format ["%1.%2.%3 <t color='#fffff' size='0.8'>(%4)</t>",_birth_day,_birth_month,_birth_year,_unitAge];
 
 _name = ACL_NameGenerator call BIS_fnc_selectRandom;

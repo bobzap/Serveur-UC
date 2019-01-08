@@ -27,7 +27,7 @@ if (_currentMap in ["CLA Clafghan","Takistan Moutains","Zargabad","Désert","Sha
 if (_currentMap == "PR FATA") then {_currentMap = "PAKISTAN"};
 if (_currentMap == "Bornholm, Denmark") then {_currentMap = "BORNHOLM"};
 if (_currentMap == "F.S.F N'Ziwasogo") then {_currentMap = "N'ZIWASOGO"};
-if (_currentMap == "F.S.F Kalu Khan") then {_currentMap = "KALKHAN"};
+if (_currentMap == "F.S.F Kalu Khan") then {_currentMap = "KALU KHAN"};
 if (_currentMap == "F.S.F Dayah") then {_currentMap = "DAYAH"};
 if (_currentMap == "F.S.F Al Rayak") then {_currentMap = "AL RAYAK"};
 if (_currentMap == "Mogadishu") then {_currentMap = "SOMALIA"};
@@ -43,15 +43,15 @@ _unit_birthDate = (_unit getVariable "ACL_IDENTITY_BIRTH");
 // ----------------------
 
 _StructuredText_1 = _display displayCtrl 1201;
-_StructuredText_1 ctrlSetStructuredText parseText "<t font='TahomaB' size='1.6' shadow='1' color='#000000'>CITIZENS CARD </t><br/><t font='TahomaB' size='0.7' shadow='0' color='#b91515'>CARTE A PRESENTER AUX CLONES DE LA REPUBLIQUE</t><br/><t font='TahomaB' size='0.7' shadow='0' color='#000000'>AUTHENTICATION CODE : <t color='#b91515'>1173825461</t></t><br/><t font='PuristaLight' size='0.7' shadow='0' color='#000000'>PROVIDED BY NATO AUTHORITIES</t>";
+_StructuredText_1 ctrlSetStructuredText parseText "<t font='TahomaB' size='1.6' shadow='1' color='#000000'>NATIONAL IDENTITY CARD</t><br/><t font='TahomaB' size='0.7' shadow='0' color='#b91515'>THIS ID CARD MUST BE PRESENTED TO ANY NATO FORCE</t><br/><t font='TahomaB' size='0.7' shadow='0' color='#000000'>AUTHENTICATION CODE : <t color='#b91515'>1173825461</t></t><br/><t font='PuristaLight' size='0.7' shadow='0' color='#000000'>PROVIDED BY NATO AUTHORITIES</t>";
 
 _StructuredText_2 = _display displayCtrl 1202;
-_StructuredText_2 ctrlSetStructuredText parseText format ["<t font='PuristaBold' shadow='0' color='#000000'>CITOYENS DE <t color='#466029'>%1</t></t>",_currentMap];
+_StructuredText_2 ctrlSetStructuredText parseText format ["<t font='PuristaBold' shadow='0' color='#000000'>CITIZEN OF <t color='#466029'>%1</t></t>",_currentMap];
 
 _StructuredText_3 = _display displayCtrl 1203;
 _StructuredText_3 ctrlSetStructuredText parseText format ["
-<t font='PuristaBold' size='1' shadow='0' color='#ffffff'>NOM</t><br/><t font='EtelkaMonospacePro' size='0.9' shadow='0' color='#ffb400'>%1</t>
-<br/><t font='PuristaBold' size='1' shadow='0' color='#ffffff'>SEXE</t><br/><t font='EtelkaMonospacePro' size='0.9' shadow='0' color='#ffb400'>MALE</t>
+<t font='PuristaBold' size='1' shadow='0' color='#ffffff'>NAME</t><br/><t font='EtelkaMonospacePro' size='0.9' shadow='0' color='#ffb400'>%1</t>
+<br/><t font='PuristaBold' size='1' shadow='0' color='#ffffff'>GENDER</t><br/><t font='EtelkaMonospacePro' size='0.9' shadow='0' color='#ffb400'>MALE</t>
 <br/><t font='PuristaBold' size='1' shadow='0' color='#ffffff'>ID NUMBER</t><br/><t font='EtelkaMonospacePro' size='0.9' shadow='0' color='#ffb400'>%2</t>",_unit_name,_unit_IDnumber];
 
 _StructuredText_4 = _display displayCtrl 1204;

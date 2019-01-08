@@ -115,23 +115,7 @@ ACL_fnc_filter_CIVILIAN =
 // ================================================================================================ Classnames civils
 ACL_class_VANILLA =
 [
-	"C_man_p_beggar_F",
-	"C_man_1",
-	"C_man_polo_1_F",
-	"C_man_polo_2_F",
-	"C_man_polo_3_F",
-	"C_man_polo_4_F",
-	"C_man_polo_5_F",
-	"C_man_polo_6_F",
-	"C_man_shorts_1_F",
-	"C_man_1_1_F",
-	"C_man_1_2_F",
-	"C_man_1_3_F",
-	"C_man_p_fugitive_F",
-	"C_man_p_shorts_1_F",
-	"C_man_hunter_1_F",
-	"C_man_shorts_2_F",
-	"C_man_shorts_3_F",
+	
 	"C_man_shorts_4_F"
 ];
 ACL_class_AFGHAN =
@@ -148,6 +132,6 @@ ACL_class_AFRICAN =
 	"CAF_AG_AFR_CIV_04",
 	"CAF_AG_AFR_CIV"
 ];
-ACL_class_Civilians = ACL_class_VANILLA + ACL_class_AFGHAN + ACL_class_AFRICAN;
+ACL_class_Civilians = ACL_class_VANILLA ;
 
 if (true) exitWith {};
