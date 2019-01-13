@@ -57,7 +57,7 @@ _marker = createMarker [format ["PA%1", count allMapMarkers], getpos player]; //
 
 _marker setMarkerShape "RECTANGLE";
 _marker setMarkerColor "ColorBlue";
-_marker setMarkerSize [200,200];
+_marker setMarkerSize [800,800];
 
 // mettre un waituntil pour la présence de l'objet. si plus d'objet présent détruire le marker 
 
