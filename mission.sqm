@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=21859;
+		nextID=22235;
 	};
 	class Camera
 	{
-		pos[]={15555.154,413.14734,12537.039};
-		dir[]={-0.16475174,-0.1871729,-0.96849531};
-		up[]={-0.031401239,0.98230469,-0.18460138};
-		aside[]={-0.98590934,-4.502981e-007,0.16771184};
+		pos[]={15563.652,407.82617,12497.159};
+		dir[]={-0.73226482,-0.67988139,-0.042032801};
+		up[]={-0.67877322,0.73330665,-0.0389641};
+		aside[]={-0.05731326,-1.2172122e-006,0.99845463};
 	};
 };
 binarizationWanted=0;
@@ -19313,7 +19313,7 @@ class Mission
 			type="loc_Transmitter";
 			colorName="ColorEAST";
 			id=871;
-			atlOffset=110.0723;
+			atlOffset=109.23755;
 		};
 		class Item75
 		{
@@ -51297,7 +51297,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="call{[aHumvee,""Equipements_CLONES"",aHumvee,aHelipad,""Armurie CLONES"",""Armurerie de la République"",{side player == WEST}] call grad_lbm_fnc_addInteraction;}";
+				init="call{[aHumvee,""Equipements_CLONES"",aHumvee,aHelipad,""Armurie CLONES"",""Armurerie de la République""] call grad_lbm_fnc_addInteraction;}";
 				name="aHumvee";
 			};
 			id=23206;
@@ -51452,14 +51452,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={15534.704,398.2135,12505.984};
+						position[]={15534.704,398.21344,12505.984};
 						angles[]={0,4.5204029,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						init="call{[ko,""Casques"",aHumvee_1,aHelipad,""Casques Spécials"",""Armurerie de la Division HORAX"",{side player == WEST}] call grad_lbm_fnc_addInteraction;}";
+						init="call{[ko,""Casques"",aHumvee_1,aHelipad,""Casques Spécials"",""Armurerie de la Division HORAX""] call grad_lbm_fnc_addInteraction;}";
 						name="ko";
 						disableSimulation=1;
 						ignoreByDynSimulGrid=1;
@@ -51514,7 +51514,7 @@ class Mission
 					};
 					id=23212;
 					type="SWOP_501_recon";
-					atlOffset=0.10592651;
+					atlOffset=0.10586548;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -51563,7 +51563,7 @@ class Mission
 			{
 			};
 			id=23211;
-			atlOffset=0.10592651;
+			atlOffset=0.10586548;
 		};
 		class Item764
 		{
@@ -53479,7 +53479,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="call{[bar1,""bar_ext"",aHumvee_2,ahelipad1,""Bar Local"",""Bar Local"",{side player == WEST}] call grad_lbm_fnc_addInteraction;}";
+						init="call{[bar1,""bar_ext"",aHumvee_2,ahelipad1,""Bar Local"",""Bar Local""] call grad_lbm_fnc_addInteraction;}";
 						name="bar1";
 						class Inventory
 						{
@@ -55738,7 +55738,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
-				init="call{[fo,""Logistique"",aHumvee_1,aHelipad,""Boutique Logistique"",""Dépôt Logistique"",{side player == WEST}] call grad_lbm_fnc_addInteraction;}";
+				init="call{[fo,""Logistique"",aHumvee_1,aHelipad,""Boutique Logistique"",""Dépôt Logistique""] call grad_lbm_fnc_addInteraction;}";
 				name="fo";
 			};
 			id=23824;

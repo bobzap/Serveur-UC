@@ -215,8 +215,8 @@ class CfgGradMoneymenu {
 class CfgGradFortifications {
     canDemolishDefault = 1;
     demolitionTimeFactor = 1;
-    playerInventorySize = 100;
-    vehicleInventorySizeFactor = 250;
+    playerInventorySize = 300;
+    vehicleInventorySizeFactor = 600;
     fortificationOwnerType = "SIDE"
 
     class Fortifications {
