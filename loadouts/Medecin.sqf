@@ -1,47 +1,43 @@
+//retire le sac si necessaire
 clearAllItemsFromBackpack player;
 clearBackpackCargo player;
-removeAllWeapons player;
-removeAllItems player;
 removeBackpack player;
-removeHeadgear player;
-removeUniform player;
-removeVest player;
-{player unassignItem _x;player removeItem _x} forEach assignedItems player;
-player addHeadgear "SWOP_Clonetrooper_501_helmet";
-player addUniform "SWOP_Clonetrooper_501_F_CombatUniform";
-player addVest "SWOP_Clonetrooper_501med_armor";
+
+//ajoute le sac médical
 player addBackpack "SWOP_B_CloneBackpack_med";
-player addItem "itemCompass";
-player addItem "itemWatch";
-player addItem "tf_anprc152";
-player addItem "itemMap";
-player assignItem "itemCompass";
-player assignItem "itemWatch";
-player assignItem "tf_anprc152";
-player assignItem "itemMap";
-player addItem "OPTRE_NVG";
-player assignItem "OPTRE_NVG";
-player addItem "SWOP_Clones_HUD";
-player assignItem "SWOP_Clones_HUD";
-player addMagazine "SWOP_termDet_G";
-player addMagazine "SWOP_termDet_G";
-player addMagazine "Smokeshell";
-player addMagazine "SWOP_DC15_Mag";
-player addMagazine "SWOP_DC15_Mag";
-player addMagazine "SWOP_DC15_Mag";
-unitBackpack player addItemCargo ["ACE_elasticBandage",25];
-unitBackpack player additemcargo ["ACE_packingBandage",25];
-unitBackpack player addItemCargo ["ACE_quikclot",25];
-unitBackpack player additemcargo ["ACE_morphine",25];
-unitBackpack player addItemCargo ["ACE_epinephrine",20];
-unitBackpack player additemcargo ["FirstAidKit",5];
-unitBackpack player addItemCargo ["ACE_bodyBag",10];
-unitBackpack player additemcargo ["FirstAidKit",5];
-unitBackpack player addItemCargo ["ACE_tourniquet",15];
-unitBackpack player additemcargo ["ACE_bloodIV_500",10];
-unitBackpack player addItemCargo ["ACE_plasmaIV_500",2];
-unitBackpack player additemcargo ["ACE_salineIV_500",2];
-unitBackpack player addItemCargo ["ACE_personalAidKit",2];
-player addWeapon "SWOP_DC15";
-player selectWeapon "SWOP_DC15";
+
+
+//epinephrine et morphine
+unitBackpack player addItemCargo ["ACE_epinephrine",10];
+unitBackpack player addItemCargo ["ACE_morphine",10];
+
+//bandages
+unitBackpack player addItemCargo ["ACE_quikclot",15];
+unitBackpack player addItemCargo ["ACE_elasticBandage",15];
+unitBackpack player addItemCargo ["ACE_packingBandage",15];
+unitBackpack player addItemCargo ["ACE_fieldDressing",15];
+
+//sang, saline
+unitBackpack player addItemCargo ["ACE_bloodIV",4];
+unitBackpack player addItemCargo ["ACE_bloodIV_500",4];
+unitBackpack player addItemCargo ["ACE_salineIV",4];
+unitBackpack player addItemCargo ["ACE_salineIV_500",2];
+
+//garrot
+unitBackpack player addItemCargo ["ACE_tourniquet",6];
+
+//attelle
+unitBackpack player addItemCargo ["adv_aceSplint_splint",4];
+
+//défibrilateur
+unitBackpack player addItemCargo ["adv_aceCPR_AED",1];
+
+
+//housse mortuaire
+unitBackpack player addItemCargo ["ACE_bodyBag",1];
+
+//trousse
+unitBackpack player addItemCargo ["ACE_surgicalKit",1];
+unitBackpack player addItemCargo ["ACE_personalAidKit",1];
+
 player switchMove "amovpercmstpsraswrfldnon";
