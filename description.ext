@@ -25,7 +25,7 @@ joinUnassigned = 1;
 #include "TER_TargetGUI\defines_A3.hpp"
 #include "TER_TargetGUI\TER_target.hpp"
 
-
+//test git notif
 
 
 class CfgDebriefing
