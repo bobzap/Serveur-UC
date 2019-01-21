@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=22799;
+		nextID=22987;
 	};
 	class Camera
 	{
-		pos[]={5532.7959,423.31372,6161.6113};
-		dir[]={-0.70951587,-0.62625688,0.32312807};
-		up[]={-0.56993794,0.77961558,0.25956121};
-		aside[]={0.41446736,-1.4955731e-007,0.9100765};
+		pos[]={18260.125,424.82214,-2668.3669};
+		dir[]={0.42628378,-0.46384618,-0.77671015};
+		up[]={0.22317915,0.88591301,-0.40664327};
+		aside[]={-0.87671578,-4.9257505e-007,-0.48117077};
 	};
 };
 binarizationWanted=0;
@@ -7669,7 +7669,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=403.36115;
+														value=403.36099;
 													};
 												};
 												class Item1
@@ -8794,7 +8794,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=3.4547186;
+														value=3.45472;
 													};
 												};
 												class Item1
@@ -19372,7 +19372,7 @@ class Mission
 			type="loc_Transmitter";
 			colorName="ColorEAST";
 			id=871;
-			atlOffset=109.23755;
+			atlOffset=110.0723;
 		};
 		class Item75
 		{
@@ -20899,14 +20899,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18263.598,421.5463,-2669.074};
+								position[]={18263.598,421.54678,-2669.074};
 								angles[]={0,0.014224433,0};
 							};
 							side="West";
 							flags=4;
 							class Attributes
 							{
-								rank="CAPTAIN";
+								rank="SERGEANT";
 								init="removeallWeapons this; removebackpack this;";
 								description="CT SGT chef";
 								isPlayable=1;
@@ -20963,6 +20963,7 @@ class Mission
 							};
 							id=249;
 							type="B_Soldier_SL_F";
+							atlOffset=0.00048828125;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -21305,10 +21306,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18265.746,421.80164,-2670.9939};
+								position[]={18265.746,421.5463,-2670.9939};
 							};
 							side="West";
-							flags=1;
+							flags=5;
 							class Attributes
 							{
 								name="ct";
@@ -21367,7 +21368,6 @@ class Mission
 							};
 							id=253;
 							type="B_engineer_F";
-							atlOffset=0.25534058;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -21571,7 +21571,8 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Clone Trooper";
+								rank="CORPORAL";
+								description="CPL 1976 Flash";
 								isPlayable=1;
 								class Inventory
 								{
@@ -21952,15 +21953,15 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18265.248,421.8273,-2672.646};
+								position[]={18265.248,421.5463,-2672.646};
 							};
 							side="West";
-							flags=1;
+							flags=5;
 							class Attributes
 							{
-								rank="CORPORAL";
+								rank="SERGEANT";
 								name="appo";
-								description="CPL 1119 Appo";
+								description="SGT 1119 Appo";
 								isPlayable=1;
 								class Inventory
 								{
@@ -22015,10 +22016,28 @@ class Mission
 							};
 							id=258;
 							type="B_Soldier_TL_F";
-							atlOffset=0.28100586;
 							class CustomAttributes
 							{
 								class Attribute0
+								{
+									property="ace_isEngineer";
+									expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=2;
+										};
+									};
+								};
+								class Attribute1
 								{
 									property="speaker";
 									expression="_this setspeaker _value;";
@@ -22037,7 +22056,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -22056,7 +22075,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute2
+								class Attribute3
 								{
 									property="enableStamina";
 									expression="_this enablestamina _value;";
@@ -22075,7 +22094,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=3;
+								nAttributes=4;
 							};
 						};
 						class Item8
@@ -22083,10 +22102,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18264.922,421.83795,-2673.699};
+								position[]={18264.922,421.5463,-2673.699};
 							};
 							side="West";
-							flags=1;
+							flags=5;
 							class Attributes
 							{
 								description="Clone Trooper";
@@ -22144,7 +22163,6 @@ class Mission
 							};
 							id=259;
 							type="B_Soldier_F";
-							atlOffset=0.29165649;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -22212,10 +22230,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18265.676,421.91556,-2674.5859};
+								position[]={18265.676,421.5463,-2674.5859};
 							};
 							side="West";
-							flags=1;
+							flags=5;
 							class Attributes
 							{
 								description="Clone Trooper";
@@ -22273,7 +22291,6 @@ class Mission
 							};
 							id=260;
 							type="B_Soldier_F";
-							atlOffset=0.3692627;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -22341,10 +22358,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18264.982,421.89426,-2675.614};
+								position[]={18264.982,421.5463,-2675.614};
 							};
 							side="West";
-							flags=1;
+							flags=5;
 							class Attributes
 							{
 								description="Clone Trooper";
@@ -22402,7 +22419,6 @@ class Mission
 							};
 							id=261;
 							type="B_Soldier_F";
-							atlOffset=0.34796143;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -22484,10 +22500,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18269.137,422.04855,-2671.573};
+								position[]={18269.137,421.5463,-2671.573};
 							};
 							side="West";
-							flags=3;
+							flags=7;
 							class Attributes
 							{
 								rank="SERGEANT";
@@ -22547,7 +22563,6 @@ class Mission
 							};
 							id=263;
 							type="B_Soldier_SL_F";
-							atlOffset=0.5022583;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -22615,10 +22630,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18267.518,421.9498,-2671.76};
+								position[]={18267.518,421.5463,-2671.76};
 							};
 							side="West";
-							flags=1;
+							flags=5;
 							class Attributes
 							{
 								rank="CORPORAL";
@@ -22677,7 +22692,6 @@ class Mission
 							};
 							id=264;
 							type="B_medic_F";
-							atlOffset=0.40350342;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -22745,10 +22759,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18270.957,422.13135,-2671.3879};
+								position[]={18270.957,421.5463,-2671.3879};
 							};
 							side="West";
-							flags=1;
+							flags=5;
 							class Attributes
 							{
 								description="Clone trooper";
@@ -22806,7 +22820,6 @@ class Mission
 							};
 							id=265;
 							type="B_engineer_F";
-							atlOffset=0.58505249;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -22874,10 +22887,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18268.334,422.0697,-2673.2991};
+								position[]={18268.334,421.5463,-2673.2991};
 							};
 							side="West";
-							flags=1;
+							flags=5;
 							class Attributes
 							{
 								rank="CORPORAL";
@@ -22937,7 +22950,6 @@ class Mission
 							};
 							id=266;
 							type="B_Soldier_TL_F";
-							atlOffset=0.52340698;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -23005,10 +23017,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18267.533,422.04208,-2674.282};
+								position[]={18267.533,421.5463,-2674.282};
 							};
 							side="West";
-							flags=1;
+							flags=5;
 							class Attributes
 							{
 								description="Clone Trooper";
@@ -23066,7 +23078,6 @@ class Mission
 							};
 							id=267;
 							type="B_Soldier_F";
-							atlOffset=0.49578857;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -23134,13 +23145,13 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18268.393,422.1528,-2675.4619};
+								position[]={18268.393,421.5463,-2675.4619};
 							};
 							side="West";
-							flags=1;
+							flags=5;
 							class Attributes
 							{
-								description="Clone Trooper";
+								description="ING Clone Trooper";
 								isPlayable=1;
 								class Inventory
 								{
@@ -23195,10 +23206,28 @@ class Mission
 							};
 							id=268;
 							type="B_Soldier_F";
-							atlOffset=0.60650635;
 							class CustomAttributes
 							{
 								class Attribute0
+								{
+									property="ace_isEngineer";
+									expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=2;
+										};
+									};
+								};
+								class Attribute1
 								{
 									property="speaker";
 									expression="_this setspeaker _value;";
@@ -23217,7 +23246,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -23236,7 +23265,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute2
+								class Attribute3
 								{
 									property="enableStamina";
 									expression="_this enablestamina _value;";
@@ -23255,7 +23284,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=3;
+								nAttributes=4;
 							};
 						};
 						class Item6
@@ -23263,10 +23292,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18267.566,422.16605,-2676.4329};
+								position[]={18267.566,421.5463,-2676.4329};
 							};
 							side="West";
-							flags=1;
+							flags=5;
 							class Attributes
 							{
 								description="Clone Trooper";
@@ -23324,7 +23353,6 @@ class Mission
 							};
 							id=269;
 							type="B_Soldier_F";
-							atlOffset=0.61975098;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -23392,10 +23420,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18270.301,422.19034,-2672.9749};
+								position[]={18270.301,421.5463,-2672.9749};
 							};
 							side="West";
-							flags=1;
+							flags=5;
 							class Attributes
 							{
 								rank="CORPORAL";
@@ -23455,10 +23483,28 @@ class Mission
 							};
 							id=270;
 							type="B_Soldier_TL_F";
-							atlOffset=0.64404297;
 							class CustomAttributes
 							{
 								class Attribute0
+								{
+									property="ace_isMedic";
+									expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"", _value, true];};";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=2;
+										};
+									};
+								};
+								class Attribute1
 								{
 									property="speaker";
 									expression="_this setspeaker _value;";
@@ -23477,7 +23523,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -23496,7 +23542,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute2
+								class Attribute3
 								{
 									property="enableStamina";
 									expression="_this enablestamina _value;";
@@ -23515,7 +23561,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=3;
+								nAttributes=4;
 							};
 						};
 						class Item8
@@ -23523,13 +23569,13 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18269.975,422.2164,-2674.0278};
+								position[]={18269.975,421.54642,-2674.0278};
 							};
 							side="West";
-							flags=1;
+							flags=5;
 							class Attributes
 							{
-								description="Clone Trooper";
+								description="INF Clone Trooper";
 								isPlayable=1;
 								class Inventory
 								{
@@ -23584,10 +23630,29 @@ class Mission
 							};
 							id=271;
 							type="B_Soldier_F";
-							atlOffset=0.67010498;
+							atlOffset=0.00012207031;
 							class CustomAttributes
 							{
 								class Attribute0
+								{
+									property="ace_isMedic";
+									expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"", _value, true];};";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=1;
+										};
+									};
+								};
+								class Attribute1
 								{
 									property="speaker";
 									expression="_this setspeaker _value;";
@@ -23606,7 +23671,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -23625,7 +23690,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute2
+								class Attribute3
 								{
 									property="enableStamina";
 									expression="_this enablestamina _value;";
@@ -23644,7 +23709,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=3;
+								nAttributes=4;
 							};
 						};
 						class Item9
@@ -23652,13 +23717,13 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18270.729,421.5463,-2674.915};
+								position[]={18270.729,421.54672,-2674.915};
 							};
 							side="West";
 							flags=5;
 							class Attributes
 							{
-								description="Clone Trooper";
+								description="INF Clone Trooper ";
 								isPlayable=1;
 								class Inventory
 								{
@@ -23713,9 +23778,29 @@ class Mission
 							};
 							id=272;
 							type="B_Soldier_F";
+							atlOffset=0.00042724609;
 							class CustomAttributes
 							{
 								class Attribute0
+								{
+									property="ace_isMedic";
+									expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"", _value, true];};";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=1;
+										};
+									};
+								};
+								class Attribute1
 								{
 									property="speaker";
 									expression="_this setspeaker _value;";
@@ -23734,7 +23819,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -23753,7 +23838,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute2
+								class Attribute3
 								{
 									property="enableStamina";
 									expression="_this enablestamina _value;";
@@ -23772,7 +23857,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=3;
+								nAttributes=4;
 							};
 						};
 						class Item10
@@ -23780,13 +23865,13 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18270.035,421.5463,-2675.9429};
+								position[]={18270.035,421.54648,-2675.9429};
 							};
 							side="West";
 							flags=5;
 							class Attributes
 							{
-								description="Clone Trooper";
+								description="ING Clone Trooper";
 								isPlayable=1;
 								class Inventory
 								{
@@ -23841,9 +23926,29 @@ class Mission
 							};
 							id=273;
 							type="B_Soldier_F";
+							atlOffset=0.00018310547;
 							class CustomAttributes
 							{
 								class Attribute0
+								{
+									property="ace_isEngineer";
+									expression="if !(_value == ([0,1] select (_this getUnitTrait 'engineer'))|| {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=2;
+										};
+									};
+								};
+								class Attribute1
 								{
 									property="speaker";
 									expression="_this setspeaker _value;";
@@ -23862,7 +23967,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -23881,7 +23986,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute2
+								class Attribute3
 								{
 									property="enableStamina";
 									expression="_this enablestamina _value;";
@@ -23900,7 +24005,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=3;
+								nAttributes=4;
 							};
 						};
 						class Item11
@@ -23908,7 +24013,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18266.939,421.54648,-2673.179};
+								position[]={18266.939,421.5463,-2673.179};
 							};
 							side="West";
 							flags=5;
@@ -23971,10 +24076,28 @@ class Mission
 							};
 							id=23446;
 							type="B_Soldier_TL_F";
-							atlOffset=0.00018310547;
 							class CustomAttributes
 							{
 								class Attribute0
+								{
+									property="ace_isMedic";
+									expression="if (_value > -1) then {_this setVariable [""ace_medical_medicClass"", _value, true];};";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=2;
+										};
+									};
+								};
+								class Attribute1
 								{
 									property="speaker";
 									expression="_this setspeaker _value;";
@@ -23993,7 +24116,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute1
+								class Attribute2
 								{
 									property="pitch";
 									expression="_this setpitch _value;";
@@ -24012,7 +24135,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute2
+								class Attribute3
 								{
 									property="enableStamina";
 									expression="_this enablestamina _value;";
@@ -24031,7 +24154,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=3;
+								nAttributes=4;
 							};
 						};
 					};
@@ -24039,7 +24162,6 @@ class Mission
 					{
 					};
 					id=262;
-					atlOffset=0.5022583;
 				};
 				class Item3
 				{
@@ -24586,10 +24708,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18266.5,421.80725,-2678.394};
+								position[]={18266.5,421.5463,-2678.394};
 							};
 							side="West";
-							flags=3;
+							flags=7;
 							class Attributes
 							{
 								rank="LIEUTENANT";
@@ -24648,7 +24770,6 @@ class Mission
 							};
 							id=283;
 							type="B_Helipilot_F";
-							atlOffset=0.26095581;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -24976,7 +25097,6 @@ class Mission
 					{
 					};
 					id=282;
-					atlOffset=0.26095581;
 				};
 				class Item5
 				{
@@ -24990,10 +25110,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18268.67,422.004,-2678.0559};
+								position[]={18268.67,421.5463,-2678.0559};
 							};
 							side="West";
-							flags=3;
+							flags=7;
 							class Attributes
 							{
 								rank="LIEUTENANT";
@@ -25052,7 +25172,6 @@ class Mission
 							};
 							id=287;
 							type="B_Helipilot_F";
-							atlOffset=0.45770264;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -25120,10 +25239,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={18269.029,422.12723,-2680.3721};
+								position[]={18269.029,421.5463,-2680.3721};
 							};
 							side="West";
-							flags=1;
+							flags=5;
 							class Attributes
 							{
 								rank="LIEUTENANT";
@@ -25182,7 +25301,6 @@ class Mission
 							};
 							id=288;
 							type="B_Helipilot_F";
-							atlOffset=0.58093262;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -25250,7 +25368,6 @@ class Mission
 					{
 					};
 					id=286;
-					atlOffset=0.45770264;
 				};
 				class Item6
 				{
@@ -25787,7 +25904,7 @@ class Mission
 				};
 			};
 			id=4486;
-			atlOffset=-30.55838;
+			atlOffset=-30.559631;
 		};
 		class Item185
 		{
@@ -36514,7 +36631,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={19646.078,440.75717,11673.918};
-			angle=4.7298417;
+			angle=4.7298412;
 			class Attributes
 			{
 				name="p1_1";
@@ -55140,12 +55257,12 @@ class Mission
 				angles[]={0,2.146755,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 			};
 			id=23723;
 			type="Land_Target_Oval_F";
+			atlOffset=1.6568909;
 		};
 		class Item930
 		{
@@ -55156,12 +55273,12 @@ class Mission
 				angles[]={6.22575,2.2340214,0.27158219};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 			};
 			id=23724;
 			type="Land_Target_Oval_F";
+			atlOffset=2.0018616;
 		};
 		class Item931
 		{
@@ -71942,7 +72059,7 @@ class Mission
 			};
 			id=23937;
 			type="ATM_foule_chef_village";
-			atlOffset=-0.0094909668;
+			atlOffset=-0.0090942383;
 			class CustomAttributes
 			{
 				class Attribute0
