@@ -19,7 +19,7 @@ Objet : Script lancer des objectifs lors du questionnaire chef du village.
 
 _position = GetPos player;
 
-if (isserver) then {
+
 
 
 // publicvariable "briefing"; 
@@ -41,7 +41,7 @@ waitUntil { count ( _position nearObjects ["Land_WaterTank_03_F", 5]) > 0};
 execVM "UC\chefquestion\recompense_eau.sqf";
 
 
-};
+
 
 
 

@@ -534,6 +534,7 @@ class CfgGradBuymenu {
                 tracking = 1;
 				permissionLevel = 1;
 			};
+			
 			class SCI_RPS6 {
 				displayName = "Lance rocket";
 				description = "Dotation du clone lvl 2";
@@ -542,6 +543,7 @@ class CfgGradBuymenu {
                 tracking = 1;
 				permissionLevel = 2;
 			};
+
 			class SWOP_DC17Pistol {
 				displayName = "Arme ed poing gradé";
                 description = "Dotation du gradé lvl 2";
@@ -1430,6 +1432,7 @@ class CfgGradBuymenu {
 				stock = 100;
                 tracking = 1;
 			};
+			
 			class SCI_RPS6_HEDP {
 				displayName = "Munition lance Rocket HEDP";
 				description = "Dotation du clone";

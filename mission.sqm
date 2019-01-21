@@ -8,7 +8,7 @@ class EditorData
 	toggles=546;
 	class ItemIDProvider
 	{
-		nextID=24061;
+		nextID=24066;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=22235;
+		nextID=22799;
 	};
 	class Camera
 	{
-		pos[]={15563.652,407.82617,12497.159};
-		dir[]={-0.73226482,-0.67988139,-0.042032801};
-		up[]={-0.67877322,0.73330665,-0.0389641};
-		aside[]={-0.05731326,-1.2172122e-006,0.99845463};
+		pos[]={5532.7959,423.31372,6161.6113};
+		dir[]={-0.70951587,-0.62625688,0.32312807};
+		up[]={-0.56993794,0.77961558,0.25956121};
+		aside[]={0.41446736,-1.4955731e-007,0.9100765};
 	};
 };
 binarizationWanted=0;
@@ -829,7 +829,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=279;
+									items=280;
 									class Item0
 									{
 										class data
@@ -4736,6 +4736,20 @@ class CustomAttributes
 											value="ace_pylons_timeperpylon";
 										};
 									};
+									class Item279
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"STRING"
+												};
+											};
+											value="ace_quickmount_enabled";
+										};
+									};
 								};
 							};
 						};
@@ -4752,7 +4766,7 @@ class CustomAttributes
 								};
 								class value
 								{
-									items=279;
+									items=280;
 									class Item0
 									{
 										class data
@@ -6980,7 +6994,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0;
+														value=2;
 													};
 												};
 												class Item1
@@ -7025,7 +7039,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -7655,7 +7669,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=3600;
+														value=403.36115;
 													};
 												};
 												class Item1
@@ -7925,7 +7939,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0;
+														value=2;
 													};
 												};
 												class Item1
@@ -7970,7 +7984,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0;
+														value=1;
 													};
 												};
 												class Item1
@@ -8150,7 +8164,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0;
+														value=3;
 													};
 												};
 												class Item1
@@ -8555,7 +8569,7 @@ class CustomAttributes
 																"BOOL"
 															};
 														};
-														value=1;
+														value=0;
 													};
 												};
 												class Item1
@@ -8645,7 +8659,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=0;
+														value=2;
 													};
 												};
 												class Item1
@@ -8780,7 +8794,7 @@ class CustomAttributes
 																"SCALAR"
 															};
 														};
-														value=3;
+														value=3.4547186;
 													};
 												};
 												class Item1
@@ -17834,6 +17848,51 @@ class CustomAttributes
 															};
 														};
 														value=1;
+													};
+												};
+											};
+										};
+									};
+									class Item279
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"ARRAY"
+												};
+											};
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"BOOL"
+															};
+														};
+														value=0;
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														class type
+														{
+															type[]=
+															{
+																"SCALAR"
+															};
+														};
+														value=0;
 													};
 												};
 											};
@@ -36400,7 +36459,7 @@ class Mission
 			{
 				name="p1";
 				condition="call{this}";
-				onActivation="call{war = [300,1800,1,10,5,[0,1,0],p1,[0.8,0.8,0.8,0.8,0.8,1,1,0.8,1,1],1,6500,nil,[""AWARE"",""SAD""],false] execVM ""LV\ambientCombat.sqf""; }";
+				onActivation="call{war = [300,1800,1,10,2,[0,1,0],p1,[0.8,0.8,0.8,0.8,0.8,1,1,0.8,1,1],1,6500,nil,[""AWARE"",""SAD""],false] execVM ""LV\ambientCombat.sqf""; }";
 				sizeA=3000;
 				sizeB=2500;
 				interuptable=1;
@@ -36419,7 +36478,7 @@ class Mission
 			{
 				name="p1_3";
 				condition="call{this}";
-				onActivation="call{war = [300,1800,1,10,3,[0,1,0],p1_3,[0.8,0.8,0.8,0.8,0.8,1,1,0.8,1,1],1,6500,nil,[""AWARE"",""SAD""],false] execVM ""LV\ambientCombat.sqf""; }";
+				onActivation="call{war = [300,1800,1,10,4,[0,1,0],p1_3,[0.8,0.8,0.8,0.8,0.8,1,1,0.8,1,1],1,6500,nil,[""AWARE"",""SAD""],false] execVM ""LV\ambientCombat.sqf""; }";
 				sizeA=3700;
 				sizeB=5500;
 				interuptable=1;
@@ -36454,13 +36513,13 @@ class Mission
 		class Item668
 		{
 			dataType="Trigger";
-			position[]={19646.078,440.75696,11673.918};
-			angle=4.7298408;
+			position[]={19646.078,440.75717,11673.918};
+			angle=4.7298417;
 			class Attributes
 			{
 				name="p1_1";
 				condition="call{this}";
-				onActivation="call{war = [300,1800,1,10,5,[0,1,0],p1_1,[0.8,0.8,0.8,0.8,0.8,1,1,0.8,1,1],1,6500,nil,[""AWARE"",""SAD""],false] execVM ""LV\ambientCombat.sqf""; }";
+				onActivation="call{war = [300,1800,1,10,4,[0,1,0],p1_1,[0.8,0.8,0.8,0.8,0.8,1,1,0.8,1,1],1,6500,nil,[""AWARE"",""SAD""],false] execVM ""LV\ambientCombat.sqf""; }";
 				sizeA=2500;
 				sizeB=1500;
 				interuptable=1;
@@ -36470,18 +36529,18 @@ class Mission
 			};
 			id=21306;
 			type="EmptyDetector";
-			atlOffset=90.296783;
+			atlOffset=90.296997;
 		};
 		class Item669
 		{
 			dataType="Trigger";
-			position[]={15434.671,238.98755,17155.113};
+			position[]={15434.67,238.98732,17155.113};
 			angle=1.5707964;
 			class Attributes
 			{
 				name="p1_2";
 				condition="call{this}";
-				onActivation="call{war = [300,1800,1,10,5,[0,1,0],p1_2,[0.8,0.8,0.8,0.8,0.8,1,1,0.8,1,1],1,6000,nil,[""AWARE"",""SAD""],false] execVM ""LV\ambientCombat.sqf""; }";
+				onActivation="call{war = [300,1800,1,10,6,[0,1,0],p1_2,[0.8,0.8,0.8,0.8,0.8,1,1,0.8,1,1],1,6000,nil,[""AWARE"",""SAD""],false] execVM ""LV\ambientCombat.sqf""; }";
 				sizeA=4000;
 				sizeB=5000;
 				interuptable=1;
@@ -36491,7 +36550,7 @@ class Mission
 			};
 			id=21307;
 			type="EmptyDetector";
-			atlOffset=-117.60129;
+			atlOffset=-117.601;
 		};
 		class Item670
 		{
@@ -44902,7 +44961,7 @@ class Mission
 					name="UARS - Main Complex";
 					class Entities
 					{
-						items=30;
+						items=32;
 						class Item0
 						{
 							dataType="Object";
@@ -47291,9 +47350,47 @@ class Mission
 							type="Land_Walkover_01_F";
 							atlOffset=3.6771851;
 						};
+						class Item30
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={15620.267,429.24338,12503.607};
+								angles[]={0,1.5823257,0};
+							};
+							side="Empty";
+							flags=1;
+							class Attributes
+							{
+								init="call{[this] call BIS_fnc_replaceWithSimpleObject;}";
+								disableSimulation=1;
+							};
+							id=24061;
+							type="Land_Walkover_01_F";
+							atlOffset=30.909851;
+						};
+						class Item31
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={15620.019,429.1904,12559.289};
+								angles[]={0,1.599779,0};
+							};
+							side="Empty";
+							flags=1;
+							class Attributes
+							{
+								init="call{[this] call BIS_fnc_replaceWithSimpleObject;}";
+								disableSimulation=1;
+							};
+							id=24062;
+							type="Land_Walkover_01_F";
+							atlOffset=30.856873;
+						};
 					};
 					id=22864;
-					atlOffset=0.025360107;
+					atlOffset=23.867737;
 				};
 				class Item2
 				{
@@ -49180,7 +49277,7 @@ class Mission
 				};
 			};
 			id=22837;
-			atlOffset=-29.072021;
+			atlOffset=-29.269073;
 		};
 		class Item674
 		{
@@ -56968,12 +57065,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14407.258,364.44183,11337.2};
-				angles[]={0,5.1268582,0};
+				position[]={14411.836,364.57541,11327.47};
+				angles[]={0,3.5037017,0};
 			};
 			id=23846;
 			type="ATM_foule_addactions_generales";
-			atlOffset=0.14578247;
+			atlOffset=0.19992065;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -57079,12 +57176,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14410.305,364.44183,11337.546};
-				angles[]={0,5.1268582,0};
+				position[]={14411.332,364.57541,11330.494};
+				angles[]={0,3.5037017,0};
 			};
 			id=23847;
 			type="ATM_foule_chef_village";
-			atlOffset=0.0045471191;
+			atlOffset=-0.023162842;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -57209,12 +57306,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14409.521,364.44183,11337.135};
-				angles[]={0,5.1268525,0};
+				position[]={14411.783,364.57541,11329.733};
+				angles[]={0,3.503696,0};
 			};
 			id=23848;
 			type="ATM_foule_interrogatoire";
-			atlOffset=0.0045471191;
+			atlOffset=-0.034912109;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -57814,12 +57911,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14411.674,364.44183,11335.829};
-				angles[]={0,5.1268582,0};
+				position[]={14412.975,364.57541,11331.951};
+				angles[]={0,3.5037017,0};
 			};
 			id=23849;
 			type="ATM_foule_addactions_generales";
-			atlOffset=0.10476685;
+			atlOffset=0.13034058;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -57921,35 +58018,6 @@ class Mission
 			};
 		};
 		class Item994
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={14409.933,364.44327,11335.819};
-						angles[]={0,0.40876126,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=23851;
-					type="C_scientist_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=23850;
-		};
-		class Item995
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -58060,7 +58128,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item996
+		class Item995
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -58190,7 +58258,7 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item997
+		class Item996
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -58795,7 +58863,7 @@ class Mission
 				nAttributes=31;
 			};
 		};
-		class Item998
+		class Item997
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -58906,7 +58974,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item999
+		class Item998
 		{
 			dataType="Group";
 			side="Civilian";
@@ -58935,17 +59003,17 @@ class Mission
 			};
 			id=23856;
 		};
-		class Item1000
+		class Item999
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={16645.033,388.65057,10606.753};
+				position[]={16649.572,385.70798,10615.491};
 				angles[]={0,0.46682906,0};
 			};
 			id=23858;
 			type="ATM_foule_addactions_generales";
-			atlOffset=2.9816589;
+			atlOffset=-0.048675537;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -59046,17 +59114,17 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1001
+		class Item1000
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={16645.217,388.65057,10603.692};
+				position[]={16649.756,385.70798,10612.431};
 				angles[]={0,0.46682906,0};
 			};
 			id=23859;
 			type="ATM_foule_chef_village";
-			atlOffset=3.0901489;
+			atlOffset=-0.024383545;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -59176,17 +59244,17 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item1002
+		class Item1001
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={16644.848,388.65057,10604.495};
+				position[]={16649.387,385.70798,10613.233};
 				angles[]={0,0.46682334,0};
 			};
 			id=23860;
 			type="ATM_foule_interrogatoire";
-			atlOffset=3.0650024;
+			atlOffset=-0.016082764;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -59781,17 +59849,16 @@ class Mission
 				nAttributes=31;
 			};
 		};
-		class Item1003
+		class Item1002
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={16643.43,388.65057,10602.414};
+				position[]={16647.969,385.70798,10611.152};
 				angles[]={0,0.46682906,0};
 			};
 			id=23861;
 			type="ATM_foule_addactions_generales";
-			atlOffset=2.8111877;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -59892,7 +59959,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1004
+		class Item1003
 		{
 			dataType="Group";
 			side="Civilian";
@@ -59904,7 +59971,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={16643.463,388.65201,10604.205};
+						position[]={16648.002,385.70941,10612.943};
 						angles[]={0,2.0319176,0};
 					};
 					side="Civilian";
@@ -59914,14 +59981,16 @@ class Mission
 					};
 					id=23863;
 					type="C_scientist_F";
+					atlOffset=0.050964355;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=23862;
+			atlOffset=0.050964355;
 		};
-		class Item1005
+		class Item1004
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -60032,7 +60101,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1006
+		class Item1005
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -60162,7 +60231,7 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item1007
+		class Item1006
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -60767,7 +60836,7 @@ class Mission
 				nAttributes=31;
 			};
 		};
-		class Item1008
+		class Item1007
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -60878,7 +60947,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1009
+		class Item1008
 		{
 			dataType="Group";
 			side="Civilian";
@@ -60907,16 +60976,17 @@ class Mission
 			};
 			id=23868;
 		};
-		class Item1010
+		class Item1009
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={13420.989,352.88205,1791.5789};
+				position[]={13426.545,348.77097,1790.7817};
 				angles[]={0,6.261322,0};
 			};
 			id=23870;
 			type="ATM_foule_addactions_generales";
+			atlOffset=0.066802979;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -61017,17 +61087,17 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1011
+		class Item1010
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={13422.589,352.88205,1788.9636};
+				position[]={13428.145,348.77097,1788.1665};
 				angles[]={0,6.261322,0};
 			};
 			id=23871;
 			type="ATM_foule_chef_village";
-			atlOffset=3.7799988;
+			atlOffset=0.034912109;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -61147,16 +61217,17 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item1012
+		class Item1011
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={13421.886,352.88205,1789.4994};
+				position[]={13427.441,348.77097,1788.7023};
 				angles[]={0,6.2613163,0};
 			};
 			id=23872;
 			type="ATM_foule_interrogatoire";
+			atlOffset=0.032745361;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -61751,17 +61822,17 @@ class Mission
 				nAttributes=31;
 			};
 		};
-		class Item1013
+		class Item1012
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={13421.612,352.88205,1786.9969};
+				position[]={13427.168,348.77097,1786.1998};
 				angles[]={0,6.261322,0};
 			};
 			id=23873;
 			type="ATM_foule_addactions_generales";
-			atlOffset=3.7799988;
+			atlOffset=-0.013519287;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -61862,7 +61933,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1014
+		class Item1013
 		{
 			dataType="Group";
 			side="Civilian";
@@ -61874,7 +61945,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={13420.823,352.88348,1788.6001};
+						position[]={13426.379,348.7724,1787.803};
 						angles[]={0,1.5432253,0};
 					};
 					side="Civilian";
@@ -61891,7 +61962,7 @@ class Mission
 			};
 			id=23874;
 		};
-		class Item1015
+		class Item1014
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -62001,7 +62072,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1016
+		class Item1015
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -62130,7 +62201,7 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item1017
+		class Item1016
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -62734,7 +62805,7 @@ class Mission
 				nAttributes=31;
 			};
 		};
-		class Item1018
+		class Item1017
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -62844,7 +62915,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1019
+		class Item1018
 		{
 			dataType="Group";
 			side="Civilian";
@@ -62873,7 +62944,7 @@ class Mission
 			};
 			id=23880;
 		};
-		class Item1020
+		class Item1019
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -62984,7 +63055,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1021
+		class Item1020
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -63114,7 +63185,7 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item1022
+		class Item1021
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -63719,7 +63790,7 @@ class Mission
 				nAttributes=31;
 			};
 		};
-		class Item1023
+		class Item1022
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -63830,7 +63901,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1024
+		class Item1023
 		{
 			dataType="Group";
 			side="Civilian";
@@ -63859,17 +63930,17 @@ class Mission
 			};
 			id=23886;
 		};
-		class Item1025
+		class Item1024
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={11518.306,415.44968,16601.236};
+				position[]={11516.704,415.44968,16603.051};
 				angles[]={0,1.0951476,0};
 			};
 			id=23888;
 			type="ATM_foule_addactions_generales";
-			atlOffset=0.0018615723;
+			atlOffset=2.5207214;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -63970,17 +64041,17 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1026
+		class Item1025
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={11516.656,415.44968,16598.652};
+				position[]={11515.055,415.44968,16600.467};
 				angles[]={0,1.0951476,0};
 			};
 			id=23889;
 			type="ATM_foule_chef_village";
-			atlOffset=0.00045776367;
+			atlOffset=1.9260254;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -64100,17 +64171,17 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item1027
+		class Item1026
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={11516.83,415.44968,16599.52};
+				position[]={11515.229,415.44968,16601.334};
 				angles[]={0,1.0951419,0};
 			};
 			id=23890;
 			type="ATM_foule_interrogatoire";
-			atlOffset=0.00061035156;
+			atlOffset=2.0820618;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -64705,17 +64776,17 @@ class Mission
 				nAttributes=31;
 			};
 		};
-		class Item1028
+		class Item1027
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={11514.461,415.44968,16598.668};
+				position[]={11512.859,415.44968,16600.482};
 				angles[]={0,1.0951476,0};
 			};
 			id=23891;
 			type="ATM_foule_addactions_generales";
-			atlOffset=1.9573669;
+			atlOffset=1.677124;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -64816,7 +64887,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1029
+		class Item1028
 		{
 			dataType="Group";
 			side="Civilian";
@@ -64828,26 +64899,24 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11515.511,415.45111,16600.109};
-						angles[]={0,2.6602361,0};
+						position[]={11513.909,413.43512,16601.924};
+						angles[]={0,5.679656,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 					};
 					id=23893;
 					type="C_scientist_F";
-					atlOffset=1.9140015;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=23892;
-			atlOffset=1.9140015;
 		};
-		class Item1030
+		class Item1029
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -64958,7 +65027,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1031
+		class Item1030
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -65088,7 +65157,7 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item1032
+		class Item1031
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -65693,7 +65762,7 @@ class Mission
 				nAttributes=31;
 			};
 		};
-		class Item1033
+		class Item1032
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -65804,7 +65873,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1034
+		class Item1033
 		{
 			dataType="Group";
 			side="Civilian";
@@ -65833,7 +65902,7 @@ class Mission
 			};
 			id=23898;
 		};
-		class Item1035
+		class Item1034
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -65944,7 +66013,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1036
+		class Item1035
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -66074,7 +66143,7 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item1037
+		class Item1036
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -66679,7 +66748,7 @@ class Mission
 				nAttributes=31;
 			};
 		};
-		class Item1038
+		class Item1037
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -66790,7 +66859,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1039
+		class Item1038
 		{
 			dataType="Group";
 			side="Civilian";
@@ -66821,17 +66890,17 @@ class Mission
 			id=23904;
 			atlOffset=0.048614502;
 		};
-		class Item1040
+		class Item1039
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5466.4678,315.46011,6296.7207};
+				position[]={5466.2041,309.23117,6288.7793};
 				angles[]={0,1.5314798,0};
 			};
 			id=23906;
 			type="ATM_foule_addactions_generales";
-			atlOffset=3.4266968;
+			atlOffset=0.0086669922;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -66932,17 +67001,17 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1041
+		class Item1040
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5463.8809,315.46011,6295.0752};
+				position[]={5463.6172,309.23117,6287.1338};
 				angles[]={0,1.5314798,0};
 			};
 			id=23907;
 			type="ATM_foule_chef_village";
-			atlOffset=0.00045776367;
+			atlOffset=-0.010040283;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -67062,17 +67131,16 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item1042
+		class Item1041
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5464.4043,315.46011,6295.7876};
+				position[]={5464.1406,309.23117,6287.8462};
 				angles[]={0,1.5314741,0};
 			};
 			id=23908;
 			type="ATM_foule_interrogatoire";
-			atlOffset=0.0009765625;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -67667,17 +67735,17 @@ class Mission
 				nAttributes=31;
 			};
 		};
-		class Item1043
+		class Item1042
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5461.8965,315.46011,6296.0181};
+				position[]={5461.6328,309.23117,6288.0767};
 				angles[]={0,1.5314798,0};
 			};
 			id=23909;
 			type="ATM_foule_addactions_generales";
-			atlOffset=3.7949219;
+			atlOffset=0.035614014;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -67778,7 +67846,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1044
+		class Item1043
 		{
 			dataType="Group";
 			side="Civilian";
@@ -67790,7 +67858,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5463.436,315.46155,6296.8838};
+						position[]={5463.1724,309.2326,6288.9424};
 						angles[]={0,3.0965683,0};
 					};
 					side="Civilian";
@@ -67800,14 +67868,16 @@ class Mission
 					};
 					id=23911;
 					type="C_scientist_F";
+					atlOffset=0.020294189;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=23910;
+			atlOffset=0.020294189;
 		};
-		class Item1045
+		class Item1044
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -67918,7 +67988,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1046
+		class Item1045
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -68048,7 +68118,7 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item1047
+		class Item1046
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -68653,7 +68723,7 @@ class Mission
 				nAttributes=31;
 			};
 		};
-		class Item1048
+		class Item1047
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -68764,7 +68834,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1049
+		class Item1048
 		{
 			dataType="Group";
 			side="Civilian";
@@ -68793,17 +68863,17 @@ class Mission
 			};
 			id=23916;
 		};
-		class Item1050
+		class Item1049
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={9479.8535,385.04156,8066.3789};
+				position[]={9468.71,384.16586,8063.9692};
 				angles[]={0,1.5314798,0};
 			};
 			id=23918;
 			type="ATM_foule_addactions_generales";
-			atlOffset=0.17657471;
+			atlOffset=0.23660278;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -68902,6 +68972,136 @@ class Mission
 					};
 				};
 				nAttributes=5;
+			};
+		};
+		class Item1050
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={9466.123,384.16586,8062.3237};
+				angles[]={0,1.5314798,0};
+			};
+			id=23919;
+			type="ATM_foule_chef_village";
+			atlOffset=0.39816284;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ATM_foule_chef_village_side";
+					expression="_this setVariable ['side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ATM_foule_chef_village_enable";
+					expression="_this setVariable ['enable',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ATM_foule_chef_village_radius_min";
+					expression="_this setVariable ['radius_min',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="180";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ATM_foule_chef_village_radius_Max";
+					expression="_this setVariable ['radius_Max',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="200";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ATM_foule_chef_village_radius_arrivee";
+					expression="_this setVariable ['radius_arrivee',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="5";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ATM_foule_chef_village_size";
+					expression="_this setVariable ['size',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				nAttributes=6;
 			};
 		};
 		class Item1051
@@ -68909,36 +69109,17 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={9477.2666,385.04156,8064.7334};
-				angles[]={0,1.5314798,0};
+				position[]={9466.6465,384.16586,8063.0361};
+				angles[]={0,1.5314741,0};
 			};
-			id=23919;
-			type="ATM_foule_chef_village";
-			atlOffset=0.1887207;
+			id=23920;
+			type="ATM_foule_interrogatoire";
+			atlOffset=0.38284302;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="ATM_foule_chef_village_side";
-					expression="_this setVariable ['side',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ATM_foule_chef_village_enable";
+					property="ATM_foule_interrogatoire_enable";
 					expression="_this setVariable ['enable',_value,true];";
 					class Value
 					{
@@ -68955,10 +69136,10 @@ class Mission
 						};
 					};
 				};
-				class Attribute2
+				class Attribute1
 				{
-					property="ATM_foule_chef_village_radius_min";
-					expression="_this setVariable ['radius_min',_value,true];";
+					property="ATM_foule_interrogatoire_question10";
+					expression="_this setVariable ['question10',_value,true];";
 					class Value
 					{
 						class data
@@ -68970,14 +69151,33 @@ class Mission
 									"STRING"
 								};
 							};
-							value="180";
+							value="";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ATM_foule_interrogatoire_reponse1";
+					expression="_this setVariable ['reponse1',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Oui nous sommes prêt, mais nous exigeons 5150 CR pour réparer les dommages causés par vos troupes !";
 						};
 					};
 				};
 				class Attribute3
 				{
-					property="ATM_foule_chef_village_radius_Max";
-					expression="_this setVariable ['radius_Max',_value,true];";
+					property="ATM_foule_interrogatoire_reponse10";
+					expression="_this setVariable ['reponse10',_value,true];";
 					class Value
 					{
 						class data
@@ -68989,14 +69189,14 @@ class Mission
 									"STRING"
 								};
 							};
-							value="200";
+							value="";
 						};
 					};
 				};
 				class Attribute4
 				{
-					property="ATM_foule_chef_village_radius_arrivee";
-					expression="_this setVariable ['radius_arrivee',_value,true];";
+					property="ATM_foule_interrogatoire_reponse2";
+					expression="_this setVariable ['reponse2',_value,true];";
 					class Value
 					{
 						class data
@@ -69008,14 +69208,14 @@ class Mission
 									"STRING"
 								};
 							};
-							value="5";
+							value="Oui nous manquons cruellement d'eau ! Vous remontriez dans notre estime soldat !!";
 						};
 					};
 				};
 				class Attribute5
 				{
-					property="ATM_foule_chef_village_size";
-					expression="_this setVariable ['size',_value,true];";
+					property="ATM_foule_interrogatoire_reponse3";
+					expression="_this setVariable ['reponse3',_value,true];";
 					class Value
 					{
 						class data
@@ -69027,11 +69227,486 @@ class Mission
 									"STRING"
 								};
 							};
-							value="4";
+							value="";
 						};
 					};
 				};
-				nAttributes=6;
+				class Attribute6
+				{
+					property="ATM_foule_interrogatoire_reponse4";
+					expression="_this setVariable ['reponse4',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ATM_foule_interrogatoire_reponse5";
+					expression="_this setVariable ['reponse5',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ATM_foule_interrogatoire_reponse6";
+					expression="_this setVariable ['reponse6',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ATM_foule_interrogatoire_reponse7";
+					expression="_this setVariable ['reponse7',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ATM_foule_interrogatoire_reponse8";
+					expression="_this setVariable ['reponse8',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ATM_foule_interrogatoire_reponse9";
+					expression="_this setVariable ['reponse9',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ATM_foule_interrogatoire_question1";
+					expression="_this setVariable ['question1',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Souhaitez-vous entammer des négociations ? ";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ATM_foule_interrogatoire_question2";
+					expression="_this setVariable ['question2',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Avez-vous besoin d'eau ?";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ATM_foule_interrogatoire_question3";
+					expression="_this setVariable ['question3',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute15
+				{
+					property="ATM_foule_interrogatoire_question4";
+					expression="_this setVariable ['question4',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute16
+				{
+					property="ATM_foule_interrogatoire_question5";
+					expression="_this setVariable ['question5',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute17
+				{
+					property="ATM_foule_interrogatoire_question6";
+					expression="_this setVariable ['question6',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute18
+				{
+					property="ATM_foule_interrogatoire_question7";
+					expression="_this setVariable ['question7',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute19
+				{
+					property="ATM_foule_interrogatoire_question8";
+					expression="_this setVariable ['question8',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute20
+				{
+					property="ATM_foule_interrogatoire_question9";
+					expression="_this setVariable ['question9',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute21
+				{
+					property="ATM_foule_interrogatoire_script1";
+					expression="_this setVariable ['script1',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="UC\chefquestion\task_emi.sqf";
+						};
+					};
+				};
+				class Attribute22
+				{
+					property="ATM_foule_interrogatoire_script2";
+					expression="_this setVariable ['script2',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="UC\chefquestion\task_eau.sqf";
+						};
+					};
+				};
+				class Attribute23
+				{
+					property="ATM_foule_interrogatoire_script3";
+					expression="_this setVariable ['script3',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute24
+				{
+					property="ATM_foule_interrogatoire_script4";
+					expression="_this setVariable ['script4',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute25
+				{
+					property="ATM_foule_interrogatoire_script5";
+					expression="_this setVariable ['script5',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute26
+				{
+					property="ATM_foule_interrogatoire_script6";
+					expression="_this setVariable ['script6',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute27
+				{
+					property="ATM_foule_interrogatoire_script7";
+					expression="_this setVariable ['script7',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute28
+				{
+					property="ATM_foule_interrogatoire_script8";
+					expression="_this setVariable ['script8',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute29
+				{
+					property="ATM_foule_interrogatoire_script9";
+					expression="_this setVariable ['script9',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute30
+				{
+					property="ATM_foule_interrogatoire_script10";
+					expression="_this setVariable ['script10',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=31;
 			};
 		};
 		class Item1052
@@ -69039,617 +69714,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={9477.79,385.04156,8065.4458};
-				angles[]={0,1.5314741,0};
-			};
-			id=23920;
-			type="ATM_foule_interrogatoire";
-			atlOffset=0.035675049;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ATM_foule_interrogatoire_enable";
-					expression="_this setVariable ['enable',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ATM_foule_interrogatoire_question10";
-					expression="_this setVariable ['question10',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ATM_foule_interrogatoire_reponse1";
-					expression="_this setVariable ['reponse1',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Oui nous sommes prêt, mais nous exigeons 5150 CR pour réparer les dommages causés par vos troupes !";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ATM_foule_interrogatoire_reponse10";
-					expression="_this setVariable ['reponse10',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="ATM_foule_interrogatoire_reponse2";
-					expression="_this setVariable ['reponse2',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Oui nous manquons cruellement d'eau ! Vous remontriez dans notre estime soldat !!";
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="ATM_foule_interrogatoire_reponse3";
-					expression="_this setVariable ['reponse3',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute6
-				{
-					property="ATM_foule_interrogatoire_reponse4";
-					expression="_this setVariable ['reponse4',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute7
-				{
-					property="ATM_foule_interrogatoire_reponse5";
-					expression="_this setVariable ['reponse5',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute8
-				{
-					property="ATM_foule_interrogatoire_reponse6";
-					expression="_this setVariable ['reponse6',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute9
-				{
-					property="ATM_foule_interrogatoire_reponse7";
-					expression="_this setVariable ['reponse7',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute10
-				{
-					property="ATM_foule_interrogatoire_reponse8";
-					expression="_this setVariable ['reponse8',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute11
-				{
-					property="ATM_foule_interrogatoire_reponse9";
-					expression="_this setVariable ['reponse9',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute12
-				{
-					property="ATM_foule_interrogatoire_question1";
-					expression="_this setVariable ['question1',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Souhaitez-vous entammer des négociations ? ";
-						};
-					};
-				};
-				class Attribute13
-				{
-					property="ATM_foule_interrogatoire_question2";
-					expression="_this setVariable ['question2',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Avez-vous besoin d'eau ?";
-						};
-					};
-				};
-				class Attribute14
-				{
-					property="ATM_foule_interrogatoire_question3";
-					expression="_this setVariable ['question3',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute15
-				{
-					property="ATM_foule_interrogatoire_question4";
-					expression="_this setVariable ['question4',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute16
-				{
-					property="ATM_foule_interrogatoire_question5";
-					expression="_this setVariable ['question5',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute17
-				{
-					property="ATM_foule_interrogatoire_question6";
-					expression="_this setVariable ['question6',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute18
-				{
-					property="ATM_foule_interrogatoire_question7";
-					expression="_this setVariable ['question7',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute19
-				{
-					property="ATM_foule_interrogatoire_question8";
-					expression="_this setVariable ['question8',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute20
-				{
-					property="ATM_foule_interrogatoire_question9";
-					expression="_this setVariable ['question9',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute21
-				{
-					property="ATM_foule_interrogatoire_script1";
-					expression="_this setVariable ['script1',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="UC\chefquestion\task_emi.sqf";
-						};
-					};
-				};
-				class Attribute22
-				{
-					property="ATM_foule_interrogatoire_script2";
-					expression="_this setVariable ['script2',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="UC\chefquestion\task_eau.sqf";
-						};
-					};
-				};
-				class Attribute23
-				{
-					property="ATM_foule_interrogatoire_script3";
-					expression="_this setVariable ['script3',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute24
-				{
-					property="ATM_foule_interrogatoire_script4";
-					expression="_this setVariable ['script4',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute25
-				{
-					property="ATM_foule_interrogatoire_script5";
-					expression="_this setVariable ['script5',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute26
-				{
-					property="ATM_foule_interrogatoire_script6";
-					expression="_this setVariable ['script6',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute27
-				{
-					property="ATM_foule_interrogatoire_script7";
-					expression="_this setVariable ['script7',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute28
-				{
-					property="ATM_foule_interrogatoire_script8";
-					expression="_this setVariable ['script8',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute29
-				{
-					property="ATM_foule_interrogatoire_script9";
-					expression="_this setVariable ['script9',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute30
-				{
-					property="ATM_foule_interrogatoire_script10";
-					expression="_this setVariable ['script10',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				nAttributes=31;
-			};
-		};
-		class Item1053
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={9475.2832,385.04156,8065.6763};
+				position[]={9464.1396,384.16586,8063.2666};
 				angles[]={0,1.5314798,0};
 			};
 			id=23921;
 			type="ATM_foule_addactions_generales";
-			atlOffset=1.164856;
+			atlOffset=-0.17736816;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -69750,7 +69820,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1054
+		class Item1053
 		{
 			dataType="Group";
 			side="Civilian";
@@ -69762,36 +69832,33 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={9476.8223,385.043,8066.542};
+						position[]={9465.6787,384.1673,8064.1323};
 						angles[]={0,3.0965683,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 					};
 					id=23923;
 					type="C_scientist_F";
-					atlOffset=1.2265015;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=23922;
-			atlOffset=1.2265015;
 		};
-		class Item1055
+		class Item1054
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={17506.18,467.39624,8502.1797};
+				position[]={17498.217,465.08502,8505.2354};
 				angles[]={0,1.5314798,0};
 			};
 			id=23924;
 			type="ATM_foule_addactions_generales";
-			atlOffset=0.18688965;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -69890,6 +69957,136 @@ class Mission
 					};
 				};
 				nAttributes=5;
+			};
+		};
+		class Item1055
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={17495.629,465.08502,8503.5908};
+				angles[]={0,1.5314798,0};
+			};
+			id=23925;
+			type="ATM_foule_chef_village";
+			atlOffset=0.012634277;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ATM_foule_chef_village_side";
+					expression="_this setVariable ['side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ATM_foule_chef_village_enable";
+					expression="_this setVariable ['enable',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ATM_foule_chef_village_radius_min";
+					expression="_this setVariable ['radius_min',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="180";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ATM_foule_chef_village_radius_Max";
+					expression="_this setVariable ['radius_Max',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="200";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ATM_foule_chef_village_radius_arrivee";
+					expression="_this setVariable ['radius_arrivee',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="5";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ATM_foule_chef_village_size";
+					expression="_this setVariable ['size',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				nAttributes=6;
 			};
 		};
 		class Item1056
@@ -69897,36 +70094,17 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={17503.592,467.39624,8500.5352};
-				angles[]={0,1.5314798,0};
+				position[]={17496.152,465.08502,8504.3027};
+				angles[]={0,1.5314741,0};
 			};
-			id=23925;
-			type="ATM_foule_chef_village";
-			atlOffset=3.027832;
+			id=23926;
+			type="ATM_foule_interrogatoire";
+			atlOffset=0.025482178;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="ATM_foule_chef_village_side";
-					expression="_this setVariable ['side',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ATM_foule_chef_village_enable";
+					property="ATM_foule_interrogatoire_enable";
 					expression="_this setVariable ['enable',_value,true];";
 					class Value
 					{
@@ -69943,10 +70121,10 @@ class Mission
 						};
 					};
 				};
-				class Attribute2
+				class Attribute1
 				{
-					property="ATM_foule_chef_village_radius_min";
-					expression="_this setVariable ['radius_min',_value,true];";
+					property="ATM_foule_interrogatoire_question10";
+					expression="_this setVariable ['question10',_value,true];";
 					class Value
 					{
 						class data
@@ -69958,14 +70136,33 @@ class Mission
 									"STRING"
 								};
 							};
-							value="180";
+							value="";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ATM_foule_interrogatoire_reponse1";
+					expression="_this setVariable ['reponse1',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Oui nous sommes prêt, mais nous exigeons 5150 CR pour réparer les dommages causés par vos troupes !";
 						};
 					};
 				};
 				class Attribute3
 				{
-					property="ATM_foule_chef_village_radius_Max";
-					expression="_this setVariable ['radius_Max',_value,true];";
+					property="ATM_foule_interrogatoire_reponse10";
+					expression="_this setVariable ['reponse10',_value,true];";
 					class Value
 					{
 						class data
@@ -69977,14 +70174,14 @@ class Mission
 									"STRING"
 								};
 							};
-							value="200";
+							value="";
 						};
 					};
 				};
 				class Attribute4
 				{
-					property="ATM_foule_chef_village_radius_arrivee";
-					expression="_this setVariable ['radius_arrivee',_value,true];";
+					property="ATM_foule_interrogatoire_reponse2";
+					expression="_this setVariable ['reponse2',_value,true];";
 					class Value
 					{
 						class data
@@ -69996,14 +70193,14 @@ class Mission
 									"STRING"
 								};
 							};
-							value="5";
+							value="Oui nous manquons cruellement d'eau ! Vous remontriez dans notre estime soldat !!";
 						};
 					};
 				};
 				class Attribute5
 				{
-					property="ATM_foule_chef_village_size";
-					expression="_this setVariable ['size',_value,true];";
+					property="ATM_foule_interrogatoire_reponse3";
+					expression="_this setVariable ['reponse3',_value,true];";
 					class Value
 					{
 						class data
@@ -70015,11 +70212,486 @@ class Mission
 									"STRING"
 								};
 							};
-							value="4";
+							value="";
 						};
 					};
 				};
-				nAttributes=6;
+				class Attribute6
+				{
+					property="ATM_foule_interrogatoire_reponse4";
+					expression="_this setVariable ['reponse4',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ATM_foule_interrogatoire_reponse5";
+					expression="_this setVariable ['reponse5',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ATM_foule_interrogatoire_reponse6";
+					expression="_this setVariable ['reponse6',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ATM_foule_interrogatoire_reponse7";
+					expression="_this setVariable ['reponse7',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ATM_foule_interrogatoire_reponse8";
+					expression="_this setVariable ['reponse8',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ATM_foule_interrogatoire_reponse9";
+					expression="_this setVariable ['reponse9',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ATM_foule_interrogatoire_question1";
+					expression="_this setVariable ['question1',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Souhaitez-vous entammer des négociations ? ";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ATM_foule_interrogatoire_question2";
+					expression="_this setVariable ['question2',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Avez-vous besoin d'eau ?";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ATM_foule_interrogatoire_question3";
+					expression="_this setVariable ['question3',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute15
+				{
+					property="ATM_foule_interrogatoire_question4";
+					expression="_this setVariable ['question4',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute16
+				{
+					property="ATM_foule_interrogatoire_question5";
+					expression="_this setVariable ['question5',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute17
+				{
+					property="ATM_foule_interrogatoire_question6";
+					expression="_this setVariable ['question6',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute18
+				{
+					property="ATM_foule_interrogatoire_question7";
+					expression="_this setVariable ['question7',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute19
+				{
+					property="ATM_foule_interrogatoire_question8";
+					expression="_this setVariable ['question8',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute20
+				{
+					property="ATM_foule_interrogatoire_question9";
+					expression="_this setVariable ['question9',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute21
+				{
+					property="ATM_foule_interrogatoire_script1";
+					expression="_this setVariable ['script1',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="UC\chefquestion\task_emi.sqf";
+						};
+					};
+				};
+				class Attribute22
+				{
+					property="ATM_foule_interrogatoire_script2";
+					expression="_this setVariable ['script2',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="UC\chefquestion\task_eau.sqf";
+						};
+					};
+				};
+				class Attribute23
+				{
+					property="ATM_foule_interrogatoire_script3";
+					expression="_this setVariable ['script3',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute24
+				{
+					property="ATM_foule_interrogatoire_script4";
+					expression="_this setVariable ['script4',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute25
+				{
+					property="ATM_foule_interrogatoire_script5";
+					expression="_this setVariable ['script5',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute26
+				{
+					property="ATM_foule_interrogatoire_script6";
+					expression="_this setVariable ['script6',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute27
+				{
+					property="ATM_foule_interrogatoire_script7";
+					expression="_this setVariable ['script7',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute28
+				{
+					property="ATM_foule_interrogatoire_script8";
+					expression="_this setVariable ['script8',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute29
+				{
+					property="ATM_foule_interrogatoire_script9";
+					expression="_this setVariable ['script9',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute30
+				{
+					property="ATM_foule_interrogatoire_script10";
+					expression="_this setVariable ['script10',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=31;
 			};
 		};
 		class Item1057
@@ -70027,617 +70699,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={17504.115,467.39624,8501.2471};
-				angles[]={0,1.5314741,0};
-			};
-			id=23926;
-			type="ATM_foule_interrogatoire";
-			atlOffset=0.0088195801;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ATM_foule_interrogatoire_enable";
-					expression="_this setVariable ['enable',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ATM_foule_interrogatoire_question10";
-					expression="_this setVariable ['question10',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ATM_foule_interrogatoire_reponse1";
-					expression="_this setVariable ['reponse1',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Oui nous sommes prêt, mais nous exigeons 5150 CR pour réparer les dommages causés par vos troupes !";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ATM_foule_interrogatoire_reponse10";
-					expression="_this setVariable ['reponse10',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="ATM_foule_interrogatoire_reponse2";
-					expression="_this setVariable ['reponse2',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Oui nous manquons cruellement d'eau ! Vous remontriez dans notre estime soldat !!";
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="ATM_foule_interrogatoire_reponse3";
-					expression="_this setVariable ['reponse3',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute6
-				{
-					property="ATM_foule_interrogatoire_reponse4";
-					expression="_this setVariable ['reponse4',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute7
-				{
-					property="ATM_foule_interrogatoire_reponse5";
-					expression="_this setVariable ['reponse5',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute8
-				{
-					property="ATM_foule_interrogatoire_reponse6";
-					expression="_this setVariable ['reponse6',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute9
-				{
-					property="ATM_foule_interrogatoire_reponse7";
-					expression="_this setVariable ['reponse7',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute10
-				{
-					property="ATM_foule_interrogatoire_reponse8";
-					expression="_this setVariable ['reponse8',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute11
-				{
-					property="ATM_foule_interrogatoire_reponse9";
-					expression="_this setVariable ['reponse9',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute12
-				{
-					property="ATM_foule_interrogatoire_question1";
-					expression="_this setVariable ['question1',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Souhaitez-vous entammer des négociations ? ";
-						};
-					};
-				};
-				class Attribute13
-				{
-					property="ATM_foule_interrogatoire_question2";
-					expression="_this setVariable ['question2',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Avez-vous besoin d'eau ?";
-						};
-					};
-				};
-				class Attribute14
-				{
-					property="ATM_foule_interrogatoire_question3";
-					expression="_this setVariable ['question3',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute15
-				{
-					property="ATM_foule_interrogatoire_question4";
-					expression="_this setVariable ['question4',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute16
-				{
-					property="ATM_foule_interrogatoire_question5";
-					expression="_this setVariable ['question5',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute17
-				{
-					property="ATM_foule_interrogatoire_question6";
-					expression="_this setVariable ['question6',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute18
-				{
-					property="ATM_foule_interrogatoire_question7";
-					expression="_this setVariable ['question7',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute19
-				{
-					property="ATM_foule_interrogatoire_question8";
-					expression="_this setVariable ['question8',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute20
-				{
-					property="ATM_foule_interrogatoire_question9";
-					expression="_this setVariable ['question9',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute21
-				{
-					property="ATM_foule_interrogatoire_script1";
-					expression="_this setVariable ['script1',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="UC\chefquestion\task_emi.sqf";
-						};
-					};
-				};
-				class Attribute22
-				{
-					property="ATM_foule_interrogatoire_script2";
-					expression="_this setVariable ['script2',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="UC\chefquestion\task_eau.sqf";
-						};
-					};
-				};
-				class Attribute23
-				{
-					property="ATM_foule_interrogatoire_script3";
-					expression="_this setVariable ['script3',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute24
-				{
-					property="ATM_foule_interrogatoire_script4";
-					expression="_this setVariable ['script4',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute25
-				{
-					property="ATM_foule_interrogatoire_script5";
-					expression="_this setVariable ['script5',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute26
-				{
-					property="ATM_foule_interrogatoire_script6";
-					expression="_this setVariable ['script6',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute27
-				{
-					property="ATM_foule_interrogatoire_script7";
-					expression="_this setVariable ['script7',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute28
-				{
-					property="ATM_foule_interrogatoire_script8";
-					expression="_this setVariable ['script8',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute29
-				{
-					property="ATM_foule_interrogatoire_script9";
-					expression="_this setVariable ['script9',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute30
-				{
-					property="ATM_foule_interrogatoire_script10";
-					expression="_this setVariable ['script10',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				nAttributes=31;
-			};
-		};
-		class Item1058
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={17501.607,467.39624,8501.4775};
+				position[]={17493.645,465.08502,8504.5332};
 				angles[]={0,1.5314798,0};
 			};
 			id=23927;
 			type="ATM_foule_addactions_generales";
-			atlOffset=0.0047607422;
+			atlOffset=0.018951416;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -70738,7 +70805,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1059
+		class Item1058
 		{
 			dataType="Group";
 			side="Civilian";
@@ -70750,36 +70817,34 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={17503.148,467.39767,8502.3428};
+						position[]={17494.875,465.03607,8506.7559};
 						angles[]={0,3.0965683,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 					};
 					id=23929;
 					type="C_scientist_F";
-					atlOffset=3.0834961;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=23928;
-			atlOffset=3.0834961;
 		};
-		class Item1060
+		class Item1059
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={11635.792,413.72839,14578.047};
+				position[]={11636.733,413.37238,14571.446};
 				angles[]={0,1.5314798,0};
 			};
 			id=23930;
 			type="ATM_foule_addactions_generales";
-			atlOffset=0.00085449219;
+			atlOffset=0.010650635;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -70878,6 +70943,136 @@ class Mission
 					};
 				};
 				nAttributes=5;
+			};
+		};
+		class Item1060
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={11634.146,413.37238,14569.802};
+				angles[]={0,1.5314798,0};
+			};
+			id=23931;
+			type="ATM_foule_chef_village";
+			atlOffset=0.0076599121;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ATM_foule_chef_village_side";
+					expression="_this setVariable ['side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ATM_foule_chef_village_enable";
+					expression="_this setVariable ['enable',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ATM_foule_chef_village_radius_min";
+					expression="_this setVariable ['radius_min',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="180";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ATM_foule_chef_village_radius_Max";
+					expression="_this setVariable ['radius_Max',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="200";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ATM_foule_chef_village_radius_arrivee";
+					expression="_this setVariable ['radius_arrivee',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="5";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ATM_foule_chef_village_size";
+					expression="_this setVariable ['size',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="4";
+						};
+					};
+				};
+				nAttributes=6;
 			};
 		};
 		class Item1061
@@ -70885,36 +71080,17 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={11633.205,413.72839,14576.402};
-				angles[]={0,1.5314798,0};
+				position[]={11634.67,413.37238,14570.514};
+				angles[]={0,1.5314741,0};
 			};
-			id=23931;
-			type="ATM_foule_chef_village";
-			atlOffset=0.34158325;
+			id=23932;
+			type="ATM_foule_interrogatoire";
+			atlOffset=0.0077514648;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="ATM_foule_chef_village_side";
-					expression="_this setVariable ['side',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ATM_foule_chef_village_enable";
+					property="ATM_foule_interrogatoire_enable";
 					expression="_this setVariable ['enable',_value,true];";
 					class Value
 					{
@@ -70931,10 +71107,10 @@ class Mission
 						};
 					};
 				};
-				class Attribute2
+				class Attribute1
 				{
-					property="ATM_foule_chef_village_radius_min";
-					expression="_this setVariable ['radius_min',_value,true];";
+					property="ATM_foule_interrogatoire_question10";
+					expression="_this setVariable ['question10',_value,true];";
 					class Value
 					{
 						class data
@@ -70946,14 +71122,33 @@ class Mission
 									"STRING"
 								};
 							};
-							value="180";
+							value="";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ATM_foule_interrogatoire_reponse1";
+					expression="_this setVariable ['reponse1',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Oui nous sommes prêt, mais nous exigeons 5150 CR pour réparer les dommages causés par vos troupes !";
 						};
 					};
 				};
 				class Attribute3
 				{
-					property="ATM_foule_chef_village_radius_Max";
-					expression="_this setVariable ['radius_Max',_value,true];";
+					property="ATM_foule_interrogatoire_reponse10";
+					expression="_this setVariable ['reponse10',_value,true];";
 					class Value
 					{
 						class data
@@ -70965,14 +71160,14 @@ class Mission
 									"STRING"
 								};
 							};
-							value="200";
+							value="";
 						};
 					};
 				};
 				class Attribute4
 				{
-					property="ATM_foule_chef_village_radius_arrivee";
-					expression="_this setVariable ['radius_arrivee',_value,true];";
+					property="ATM_foule_interrogatoire_reponse2";
+					expression="_this setVariable ['reponse2',_value,true];";
 					class Value
 					{
 						class data
@@ -70984,14 +71179,14 @@ class Mission
 									"STRING"
 								};
 							};
-							value="5";
+							value="Oui nous manquons cruellement d'eau ! Vous remontriez dans notre estime soldat !!";
 						};
 					};
 				};
 				class Attribute5
 				{
-					property="ATM_foule_chef_village_size";
-					expression="_this setVariable ['size',_value,true];";
+					property="ATM_foule_interrogatoire_reponse3";
+					expression="_this setVariable ['reponse3',_value,true];";
 					class Value
 					{
 						class data
@@ -71003,11 +71198,486 @@ class Mission
 									"STRING"
 								};
 							};
-							value="4";
+							value="";
 						};
 					};
 				};
-				nAttributes=6;
+				class Attribute6
+				{
+					property="ATM_foule_interrogatoire_reponse4";
+					expression="_this setVariable ['reponse4',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="ATM_foule_interrogatoire_reponse5";
+					expression="_this setVariable ['reponse5',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="ATM_foule_interrogatoire_reponse6";
+					expression="_this setVariable ['reponse6',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="ATM_foule_interrogatoire_reponse7";
+					expression="_this setVariable ['reponse7',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="ATM_foule_interrogatoire_reponse8";
+					expression="_this setVariable ['reponse8',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="ATM_foule_interrogatoire_reponse9";
+					expression="_this setVariable ['reponse9',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="ATM_foule_interrogatoire_question1";
+					expression="_this setVariable ['question1',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Souhaitez-vous entammer des négociations ? ";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="ATM_foule_interrogatoire_question2";
+					expression="_this setVariable ['question2',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Avez-vous besoin d'eau ?";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="ATM_foule_interrogatoire_question3";
+					expression="_this setVariable ['question3',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute15
+				{
+					property="ATM_foule_interrogatoire_question4";
+					expression="_this setVariable ['question4',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute16
+				{
+					property="ATM_foule_interrogatoire_question5";
+					expression="_this setVariable ['question5',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute17
+				{
+					property="ATM_foule_interrogatoire_question6";
+					expression="_this setVariable ['question6',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute18
+				{
+					property="ATM_foule_interrogatoire_question7";
+					expression="_this setVariable ['question7',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute19
+				{
+					property="ATM_foule_interrogatoire_question8";
+					expression="_this setVariable ['question8',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute20
+				{
+					property="ATM_foule_interrogatoire_question9";
+					expression="_this setVariable ['question9',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute21
+				{
+					property="ATM_foule_interrogatoire_script1";
+					expression="_this setVariable ['script1',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="UC\chefquestion\task_emi.sqf";
+						};
+					};
+				};
+				class Attribute22
+				{
+					property="ATM_foule_interrogatoire_script2";
+					expression="_this setVariable ['script2',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="UC\chefquestion\task_eau.sqf";
+						};
+					};
+				};
+				class Attribute23
+				{
+					property="ATM_foule_interrogatoire_script3";
+					expression="_this setVariable ['script3',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute24
+				{
+					property="ATM_foule_interrogatoire_script4";
+					expression="_this setVariable ['script4',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute25
+				{
+					property="ATM_foule_interrogatoire_script5";
+					expression="_this setVariable ['script5',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute26
+				{
+					property="ATM_foule_interrogatoire_script6";
+					expression="_this setVariable ['script6',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute27
+				{
+					property="ATM_foule_interrogatoire_script7";
+					expression="_this setVariable ['script7',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute28
+				{
+					property="ATM_foule_interrogatoire_script8";
+					expression="_this setVariable ['script8',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute29
+				{
+					property="ATM_foule_interrogatoire_script9";
+					expression="_this setVariable ['script9',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute30
+				{
+					property="ATM_foule_interrogatoire_script10";
+					expression="_this setVariable ['script10',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=31;
 			};
 		};
 		class Item1062
@@ -71015,617 +71685,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={11633.729,413.72839,14577.114};
-				angles[]={0,1.5314741,0};
-			};
-			id=23932;
-			type="ATM_foule_interrogatoire";
-			atlOffset=0.00015258789;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ATM_foule_interrogatoire_enable";
-					expression="_this setVariable ['enable',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ATM_foule_interrogatoire_question10";
-					expression="_this setVariable ['question10',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ATM_foule_interrogatoire_reponse1";
-					expression="_this setVariable ['reponse1',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Oui nous sommes prêt, mais nous exigeons 5150 CR pour réparer les dommages causés par vos troupes !";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ATM_foule_interrogatoire_reponse10";
-					expression="_this setVariable ['reponse10',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="ATM_foule_interrogatoire_reponse2";
-					expression="_this setVariable ['reponse2',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Oui nous manquons cruellement d'eau ! Vous remontriez dans notre estime soldat !!";
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="ATM_foule_interrogatoire_reponse3";
-					expression="_this setVariable ['reponse3',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute6
-				{
-					property="ATM_foule_interrogatoire_reponse4";
-					expression="_this setVariable ['reponse4',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute7
-				{
-					property="ATM_foule_interrogatoire_reponse5";
-					expression="_this setVariable ['reponse5',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute8
-				{
-					property="ATM_foule_interrogatoire_reponse6";
-					expression="_this setVariable ['reponse6',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute9
-				{
-					property="ATM_foule_interrogatoire_reponse7";
-					expression="_this setVariable ['reponse7',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute10
-				{
-					property="ATM_foule_interrogatoire_reponse8";
-					expression="_this setVariable ['reponse8',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute11
-				{
-					property="ATM_foule_interrogatoire_reponse9";
-					expression="_this setVariable ['reponse9',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute12
-				{
-					property="ATM_foule_interrogatoire_question1";
-					expression="_this setVariable ['question1',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Souhaitez-vous entammer des négociations ? ";
-						};
-					};
-				};
-				class Attribute13
-				{
-					property="ATM_foule_interrogatoire_question2";
-					expression="_this setVariable ['question2',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Avez-vous besoin d'eau ?";
-						};
-					};
-				};
-				class Attribute14
-				{
-					property="ATM_foule_interrogatoire_question3";
-					expression="_this setVariable ['question3',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute15
-				{
-					property="ATM_foule_interrogatoire_question4";
-					expression="_this setVariable ['question4',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute16
-				{
-					property="ATM_foule_interrogatoire_question5";
-					expression="_this setVariable ['question5',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute17
-				{
-					property="ATM_foule_interrogatoire_question6";
-					expression="_this setVariable ['question6',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute18
-				{
-					property="ATM_foule_interrogatoire_question7";
-					expression="_this setVariable ['question7',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute19
-				{
-					property="ATM_foule_interrogatoire_question8";
-					expression="_this setVariable ['question8',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute20
-				{
-					property="ATM_foule_interrogatoire_question9";
-					expression="_this setVariable ['question9',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute21
-				{
-					property="ATM_foule_interrogatoire_script1";
-					expression="_this setVariable ['script1',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="UC\chefquestion\task_emi.sqf";
-						};
-					};
-				};
-				class Attribute22
-				{
-					property="ATM_foule_interrogatoire_script2";
-					expression="_this setVariable ['script2',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="UC\chefquestion\task_eau.sqf";
-						};
-					};
-				};
-				class Attribute23
-				{
-					property="ATM_foule_interrogatoire_script3";
-					expression="_this setVariable ['script3',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute24
-				{
-					property="ATM_foule_interrogatoire_script4";
-					expression="_this setVariable ['script4',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute25
-				{
-					property="ATM_foule_interrogatoire_script5";
-					expression="_this setVariable ['script5',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute26
-				{
-					property="ATM_foule_interrogatoire_script6";
-					expression="_this setVariable ['script6',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute27
-				{
-					property="ATM_foule_interrogatoire_script7";
-					expression="_this setVariable ['script7',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute28
-				{
-					property="ATM_foule_interrogatoire_script8";
-					expression="_this setVariable ['script8',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute29
-				{
-					property="ATM_foule_interrogatoire_script9";
-					expression="_this setVariable ['script9',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute30
-				{
-					property="ATM_foule_interrogatoire_script10";
-					expression="_this setVariable ['script10',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				nAttributes=31;
-			};
-		};
-		class Item1063
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={11631.222,413.72839,14577.345};
+				position[]={11632.163,413.37238,14570.744};
 				angles[]={0,1.5314798,0};
 			};
 			id=23933;
 			type="ATM_foule_addactions_generales";
-			atlOffset=0.33309937;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -71726,7 +71790,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1064
+		class Item1063
 		{
 			dataType="Group";
 			side="Civilian";
@@ -71738,36 +71802,36 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11632.761,413.72983,14578.21};
+						position[]={11633.702,413.37381,14571.609};
 						angles[]={0,3.0965683,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 					};
 					id=23935;
 					type="C_scientist_F";
-					atlOffset=0.33782959;
+					atlOffset=0.0018310547;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=23934;
-			atlOffset=0.33782959;
+			atlOffset=0.0018310547;
 		};
-		class Item1065
+		class Item1064
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={12872.824,399.22433,14650.969};
+				position[]={12883.941,401.78552,14661.719};
 				angles[]={0,1.5314798,0};
 			};
 			id=23936;
 			type="ATM_foule_addactions_generales";
-			atlOffset=1.7341003;
+			atlOffset=-0.99017334;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -71868,17 +71932,17 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1066
+		class Item1065
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={12870.237,399.22433,14649.322};
+				position[]={12881.354,401.78552,14660.072};
 				angles[]={0,1.5314798,0};
 			};
 			id=23937;
 			type="ATM_foule_chef_village";
-			atlOffset=2.6635132;
+			atlOffset=-0.0094909668;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -71998,17 +72062,17 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item1067
+		class Item1066
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={12870.761,399.22433,14650.035};
+				position[]={12881.878,401.78552,14660.785};
 				angles[]={0,1.5314741,0};
 			};
 			id=23938;
 			type="ATM_foule_interrogatoire";
-			atlOffset=0.00033569336;
+			atlOffset=-0.23757935;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -72603,17 +72667,17 @@ class Mission
 				nAttributes=31;
 			};
 		};
-		class Item1068
+		class Item1067
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={12868.254,399.22433,14650.266};
+				position[]={12879.371,401.78552,14661.016};
 				angles[]={0,1.5314798,0};
 			};
 			id=23939;
 			type="ATM_foule_addactions_generales";
-			atlOffset=2.5479431;
+			atlOffset=0.5085144;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -72714,7 +72778,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1069
+		class Item1068
 		{
 			dataType="Group";
 			side="Civilian";
@@ -72726,26 +72790,24 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={12869.793,399.22577,14651.132};
+						position[]={12880.91,401.78696,14661.882};
 						angles[]={0,3.0965683,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 					};
 					id=23941;
 					type="C_scientist_F";
-					atlOffset=2.5770569;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=23940;
-			atlOffset=2.5770569;
 		};
-		class Item1070
+		class Item1069
 		{
 			dataType="Marker";
 			position[]={13425.256,348.82001,1739.218};
@@ -72757,7 +72819,7 @@ class Mission
 			id=23951;
 			atlOffset=-0.00030517578;
 		};
-		class Item1071
+		class Item1070
 		{
 			dataType="Marker";
 			position[]={18684.672,470.94135,1976.6516};
@@ -72768,7 +72830,7 @@ class Mission
 			b=100;
 			id=23952;
 		};
-		class Item1072
+		class Item1071
 		{
 			dataType="Marker";
 			position[]={9408.9014,313.384,1384.769};
@@ -72781,7 +72843,7 @@ class Mission
 			id=23953;
 			atlOffset=3.0517578e-005;
 		};
-		class Item1073
+		class Item1072
 		{
 			dataType="Marker";
 			position[]={13806.442,345.04001,4152.5469};
@@ -72793,7 +72855,7 @@ class Mission
 			id=23954;
 			atlOffset=-2.6140442;
 		};
-		class Item1074
+		class Item1073
 		{
 			dataType="Marker";
 			position[]={14887.255,491.79858,5653.9775};
@@ -72806,7 +72868,7 @@ class Mission
 			id=23956;
 			atlOffset=14.197754;
 		};
-		class Item1075
+		class Item1074
 		{
 			dataType="Marker";
 			position[]={14045.253,390.14453,6224.1514};
@@ -72818,7 +72880,7 @@ class Mission
 			id=23957;
 			atlOffset=-8.5273438;
 		};
-		class Item1076
+		class Item1075
 		{
 			dataType="Marker";
 			position[]={8603.4932,329.37323,5791.5942};
@@ -72829,7 +72891,7 @@ class Mission
 			b=150;
 			id=23958;
 		};
-		class Item1077
+		class Item1076
 		{
 			dataType="Marker";
 			position[]={5440.8032,302.48389,6249.8193};
@@ -72840,7 +72902,7 @@ class Mission
 			b=150;
 			id=23959;
 		};
-		class Item1078
+		class Item1077
 		{
 			dataType="Marker";
 			position[]={9467.9639,385.33649,8069.7949};
@@ -72851,7 +72913,7 @@ class Mission
 			b=150;
 			id=23960;
 		};
-		class Item1079
+		class Item1078
 		{
 			dataType="Marker";
 			position[]={14912.813,447.14441,8863.4219};
@@ -72863,7 +72925,7 @@ class Mission
 			id=23961;
 			atlOffset=-3.0517578e-005;
 		};
-		class Item1080
+		class Item1079
 		{
 			dataType="Marker";
 			position[]={17509.645,463.14825,8505.4629};
@@ -72874,7 +72936,7 @@ class Mission
 			b=150;
 			id=23962;
 		};
-		class Item1081
+		class Item1080
 		{
 			dataType="Marker";
 			position[]={16648.336,385.51233,10606.16};
@@ -72885,7 +72947,7 @@ class Mission
 			b=150;
 			id=23963;
 		};
-		class Item1082
+		class Item1081
 		{
 			dataType="Marker";
 			position[]={14405.411,364.02661,11338.296};
@@ -72896,7 +72958,7 @@ class Mission
 			b=150;
 			id=23964;
 		};
-		class Item1083
+		class Item1082
 		{
 			dataType="Marker";
 			position[]={17390.43,511.48596,12117.915};
@@ -72907,7 +72969,7 @@ class Mission
 			b=150;
 			id=23965;
 		};
-		class Item1084
+		class Item1083
 		{
 			dataType="Marker";
 			position[]={11203.695,507.59244,11515.07};
@@ -72918,7 +72980,7 @@ class Mission
 			b=150;
 			id=23966;
 		};
-		class Item1085
+		class Item1084
 		{
 			dataType="Marker";
 			position[]={18414.32,406.58719,15115.294};
@@ -72929,7 +72991,7 @@ class Mission
 			b=150;
 			id=23967;
 		};
-		class Item1086
+		class Item1085
 		{
 			dataType="Marker";
 			position[]={12889.98,404.07327,14646.739};
@@ -72940,7 +73002,7 @@ class Mission
 			b=150;
 			id=23968;
 		};
-		class Item1087
+		class Item1086
 		{
 			dataType="Marker";
 			position[]={11649.067,413.35147,14567.125};
@@ -72951,7 +73013,7 @@ class Mission
 			b=150;
 			id=23969;
 		};
-		class Item1088
+		class Item1087
 		{
 			dataType="Marker";
 			position[]={11539.159,405.93109,16588.199};
@@ -72962,7 +73024,7 @@ class Mission
 			b=150;
 			id=23970;
 		};
-		class Item1089
+		class Item1088
 		{
 			dataType="Trigger";
 			position[]={14417.827,364.13708,11335.168};
@@ -72979,7 +73041,7 @@ class Mission
 			id=23984;
 			type="EmptyDetectorAreaR250";
 		};
-		class Item1090
+		class Item1089
 		{
 			dataType="Trigger";
 			position[]={11520.059,412.64331,16597.131};
@@ -72996,7 +73058,7 @@ class Mission
 			id=23992;
 			type="EmptyDetectorAreaR250";
 		};
-		class Item1091
+		class Item1090
 		{
 			dataType="Trigger";
 			position[]={18402.391,410.11151,15137.303};
@@ -73013,7 +73075,7 @@ class Mission
 			id=23993;
 			type="EmptyDetectorAreaR250";
 		};
-		class Item1092
+		class Item1091
 		{
 			dataType="Trigger";
 			position[]={12878.736,399.03381,14648.075};
@@ -73031,7 +73093,7 @@ class Mission
 			type="EmptyDetectorAreaR250";
 			atlOffset=-3.0517578e-005;
 		};
-		class Item1093
+		class Item1092
 		{
 			dataType="Trigger";
 			position[]={11637.43,413.35638,14568.705};
@@ -73048,7 +73110,7 @@ class Mission
 			id=23995;
 			type="EmptyDetectorAreaR250";
 		};
-		class Item1094
+		class Item1093
 		{
 			dataType="Trigger";
 			position[]={11184.96,510.33246,11521.645};
@@ -73065,7 +73127,7 @@ class Mission
 			id=23996;
 			type="EmptyDetectorAreaR250";
 		};
-		class Item1095
+		class Item1094
 		{
 			dataType="Trigger";
 			position[]={16653.932,384.5098,10607.831};
@@ -73082,7 +73144,7 @@ class Mission
 			id=23997;
 			type="EmptyDetectorAreaR250";
 		};
-		class Item1096
+		class Item1095
 		{
 			dataType="Trigger";
 			position[]={17393.238,511.95221,12124.444};
@@ -73099,7 +73161,7 @@ class Mission
 			id=23998;
 			type="EmptyDetectorAreaR250";
 		};
-		class Item1097
+		class Item1096
 		{
 			dataType="Trigger";
 			position[]={17499.656,465.1076,8504.3184};
@@ -73117,7 +73179,7 @@ class Mission
 			type="EmptyDetectorAreaR250";
 			atlOffset=-3.0517578e-005;
 		};
-		class Item1098
+		class Item1097
 		{
 			dataType="Trigger";
 			position[]={14925.9,447.50296,8863.9297};
@@ -73134,7 +73196,7 @@ class Mission
 			id=24000;
 			type="EmptyDetectorAreaR250";
 		};
-		class Item1099
+		class Item1098
 		{
 			dataType="Trigger";
 			position[]={9473.9287,383.94522,8068.4111};
@@ -73152,7 +73214,7 @@ class Mission
 			type="EmptyDetectorAreaR250";
 			atlOffset=3.0517578e-005;
 		};
-		class Item1100
+		class Item1099
 		{
 			dataType="Trigger";
 			position[]={8606.2715,332.62521,5812.7769};
@@ -73169,7 +73231,7 @@ class Mission
 			id=24002;
 			type="EmptyDetectorAreaR250";
 		};
-		class Item1101
+		class Item1100
 		{
 			dataType="Trigger";
 			position[]={5433.6631,303.11856,6261.3862};
@@ -73186,7 +73248,7 @@ class Mission
 			id=24003;
 			type="EmptyDetectorAreaR250";
 		};
-		class Item1102
+		class Item1101
 		{
 			dataType="Trigger";
 			position[]={9447.0723,312.42358,1375.564};
@@ -73203,7 +73265,7 @@ class Mission
 			id=24004;
 			type="EmptyDetectorAreaR250";
 		};
-		class Item1103
+		class Item1102
 		{
 			dataType="Trigger";
 			position[]={14032.48,388.97531,6249.5142};
@@ -73221,7 +73283,7 @@ class Mission
 			type="EmptyDetectorAreaR250";
 			atlOffset=3.0517578e-005;
 		};
-		class Item1104
+		class Item1103
 		{
 			dataType="Trigger";
 			position[]={14894.133,474.08942,5638.0508};
@@ -73239,7 +73301,7 @@ class Mission
 			type="EmptyDetectorAreaR250";
 			atlOffset=-3.0517578e-005;
 		};
-		class Item1105
+		class Item1104
 		{
 			dataType="Trigger";
 			position[]={13790.884,344.22607,4115.6001};
@@ -73256,7 +73318,7 @@ class Mission
 			id=24007;
 			type="EmptyDetectorAreaR250";
 		};
-		class Item1106
+		class Item1105
 		{
 			dataType="Trigger";
 			position[]={13418.15,348.8096,1748.005};
@@ -73273,7 +73335,7 @@ class Mission
 			id=24008;
 			type="EmptyDetectorAreaR250";
 		};
-		class Item1107
+		class Item1106
 		{
 			dataType="Trigger";
 			position[]={18685.734,469.39676,1971.4449};
@@ -73290,7 +73352,7 @@ class Mission
 			id=24009;
 			type="EmptyDetectorAreaR250";
 		};
-		class Item1108
+		class Item1107
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -73401,7 +73463,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1109
+		class Item1108
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -73531,7 +73593,7 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item1110
+		class Item1109
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -74136,7 +74198,7 @@ class Mission
 				nAttributes=31;
 			};
 		};
-		class Item1111
+		class Item1110
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -74247,7 +74309,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1112
+		class Item1111
 		{
 			dataType="Group";
 			side="Civilian";
@@ -74278,17 +74340,17 @@ class Mission
 			id=24014;
 			atlOffset=0.12670898;
 		};
-		class Item1113
+		class Item1112
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14075.446,401.38031,6249.6626};
+				position[]={14069.793,399.34033,6237.2383};
 				angles[]={0,4.2192869,0};
 			};
 			id=24016;
 			type="ATM_foule_addactions_generales";
-			atlOffset=2.1255493;
+			atlOffset=0.73834229;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -74389,17 +74451,17 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1114
+		class Item1113
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14077.051,401.38031,6252.2759};
+				position[]={14071.397,399.34033,6239.8516};
 				angles[]={0,4.2192869,0};
 			};
 			id=24017;
 			type="ATM_foule_chef_village";
-			atlOffset=2.0183716;
+			atlOffset=0.78356934;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -74519,17 +74581,17 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item1115
+		class Item1114
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14076.893,401.38031,6251.4058};
+				position[]={14071.239,399.34033,6238.9814};
 				angles[]={0,4.2192812,0};
 			};
 			id=24018;
 			type="ATM_foule_interrogatoire";
-			atlOffset=0.014251709;
+			atlOffset=0.7300415;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -75124,17 +75186,17 @@ class Mission
 				nAttributes=31;
 			};
 		};
-		class Item1116
+		class Item1115
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={14079.246,401.38031,6252.2979};
+				position[]={14073.593,399.34033,6239.8735};
 				angles[]={0,4.2192869,0};
 			};
 			id=24019;
 			type="ATM_foule_addactions_generales";
-			atlOffset=1.8851318;
+			atlOffset=0.26248169;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -75235,7 +75297,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item1117
+		class Item1116
 		{
 			dataType="Group";
 			side="Civilian";
@@ -75247,7 +75309,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14079.985,401.3768,6249.4355};
+						position[]={14074.332,399.33682,6237.0112};
 						angles[]={0,5.7843757,0};
 					};
 					side="Civilian";
@@ -75257,14 +75319,16 @@ class Mission
 					};
 					id=24021;
 					type="C_scientist_F";
+					atlOffset=0.088500977;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=24020;
+			atlOffset=0.088500977;
 		};
-		class Item1118
+		class Item1117
 		{
 			dataType="Trigger";
 			position[]={8610.0576,332.73163,5808.77};
@@ -75281,7 +75345,7 @@ class Mission
 			id=24022;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1119
+		class Item1118
 		{
 			dataType="Trigger";
 			position[]={9475.4209,383.35587,8067.3818};
@@ -75298,7 +75362,7 @@ class Mission
 			id=24023;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1120
+		class Item1119
 		{
 			dataType="Trigger";
 			position[]={5435.8506,302.86172,6256.7334};
@@ -75315,7 +75379,7 @@ class Mission
 			id=24024;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1121
+		class Item1120
 		{
 			dataType="Trigger";
 			position[]={9451.8574,312.36572,1374.5776};
@@ -75332,7 +75396,7 @@ class Mission
 			id=24025;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1122
+		class Item1121
 		{
 			dataType="Trigger";
 			position[]={13420.611,348.81436,1743.4607};
@@ -75349,7 +75413,7 @@ class Mission
 			id=24026;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1123
+		class Item1122
 		{
 			dataType="Trigger";
 			position[]={13796.645,343.59579,4112.4307};
@@ -75366,7 +75430,7 @@ class Mission
 			id=24027;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1124
+		class Item1123
 		{
 			dataType="Trigger";
 			position[]={18690.24,468.72925,1968.1335};
@@ -75383,7 +75447,7 @@ class Mission
 			id=24028;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1125
+		class Item1124
 		{
 			dataType="Trigger";
 			position[]={14917.079,426.63452,5626.5845};
@@ -75401,7 +75465,7 @@ class Mission
 			type="EmptyDetectorAreaR50";
 			atlOffset=-35.530762;
 		};
-		class Item1126
+		class Item1125
 		{
 			dataType="Trigger";
 			position[]={14035.382,392.82947,6238.1064};
@@ -75418,7 +75482,7 @@ class Mission
 			id=24030;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1127
+		class Item1126
 		{
 			dataType="Trigger";
 			position[]={17496.266,465.07736,8503.1738};
@@ -75435,7 +75499,7 @@ class Mission
 			id=24031;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1128
+		class Item1127
 		{
 			dataType="Trigger";
 			position[]={14924.091,447.55206,8862.8867};
@@ -75452,7 +75516,7 @@ class Mission
 			id=24032;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1129
+		class Item1128
 		{
 			dataType="Trigger";
 			position[]={16651.332,384.94006,10604.922};
@@ -75469,7 +75533,7 @@ class Mission
 			id=24033;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1130
+		class Item1129
 		{
 			dataType="Trigger";
 			position[]={14414.53,364.25232,11333.85};
@@ -75486,7 +75550,7 @@ class Mission
 			id=24034;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1131
+		class Item1130
 		{
 			dataType="Trigger";
 			position[]={11193.282,509.72769,11519.266};
@@ -75503,7 +75567,7 @@ class Mission
 			id=24035;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1132
+		class Item1131
 		{
 			dataType="Trigger";
 			position[]={17393.529,511.97635,12124.918};
@@ -75520,7 +75584,7 @@ class Mission
 			id=24036;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1133
+		class Item1132
 		{
 			dataType="Trigger";
 			position[]={18398.486,410.2363,15138.475};
@@ -75537,7 +75601,7 @@ class Mission
 			id=24037;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1134
+		class Item1133
 		{
 			dataType="Trigger";
 			position[]={12882.146,400.06528,14643.932};
@@ -75554,7 +75618,7 @@ class Mission
 			id=24038;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1135
+		class Item1134
 		{
 			dataType="Trigger";
 			position[]={11636.981,413.35831,14567.967};
@@ -75571,7 +75635,7 @@ class Mission
 			id=24039;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1136
+		class Item1135
 		{
 			dataType="Trigger";
 			position[]={11522.495,411.26929,16591.611};
@@ -75588,7 +75652,7 @@ class Mission
 			id=24040;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1137
+		class Item1136
 		{
 			dataType="Trigger";
 			position[]={8624.1611,281.36597,5819.208};
@@ -75607,7 +75671,7 @@ class Mission
 			type="EmptyDetectorAreaR50";
 			atlOffset=-51.746521;
 		};
-		class Item1138
+		class Item1137
 		{
 			dataType="Trigger";
 			position[]={5444.8525,302.50995,6249.457};
@@ -75625,7 +75689,7 @@ class Mission
 			id=24042;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1139
+		class Item1138
 		{
 			dataType="Trigger";
 			position[]={9480.9023,385.21338,8065.3369};
@@ -75644,7 +75708,7 @@ class Mission
 			type="EmptyDetectorAreaR50";
 			atlOffset=1.4814758;
 		};
-		class Item1140
+		class Item1139
 		{
 			dataType="Trigger";
 			position[]={14027.899,386.74054,6253.8867};
@@ -75662,7 +75726,7 @@ class Mission
 			id=24044;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1141
+		class Item1140
 		{
 			dataType="Trigger";
 			position[]={14919.937,477.05695,5696.3633};
@@ -75680,7 +75744,7 @@ class Mission
 			id=24045;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1142
+		class Item1141
 		{
 			dataType="Trigger";
 			position[]={13765.785,344.52505,4120.5957};
@@ -75698,7 +75762,7 @@ class Mission
 			id=24046;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1143
+		class Item1142
 		{
 			dataType="Trigger";
 			position[]={9447.0273,313.50977,1379.9048};
@@ -75717,7 +75781,7 @@ class Mission
 			type="EmptyDetectorAreaR50";
 			atlOffset=1.0710449;
 		};
-		class Item1144
+		class Item1143
 		{
 			dataType="Trigger";
 			position[]={13424.54,346.76025,1745.9338};
@@ -75736,7 +75800,7 @@ class Mission
 			type="EmptyDetectorAreaR50";
 			atlOffset=-2.0529175;
 		};
-		class Item1145
+		class Item1144
 		{
 			dataType="Trigger";
 			position[]={18699.658,467.16025,1976.936};
@@ -75754,7 +75818,7 @@ class Mission
 			id=24049;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1146
+		class Item1145
 		{
 			dataType="Trigger";
 			position[]={17499.008,465.10248,8503.082};
@@ -75772,7 +75836,7 @@ class Mission
 			id=24050;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1147
+		class Item1146
 		{
 			dataType="Trigger";
 			position[]={14911.612,443.97238,8882.5703};
@@ -75790,7 +75854,7 @@ class Mission
 			id=24051;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1148
+		class Item1147
 		{
 			dataType="Trigger";
 			position[]={16664.143,382.77802,10614.402};
@@ -75808,7 +75872,7 @@ class Mission
 			id=24052;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1149
+		class Item1148
 		{
 			dataType="Trigger";
 			position[]={14428.633,364.4097,11338.872};
@@ -75826,7 +75890,7 @@ class Mission
 			id=24053;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1150
+		class Item1149
 		{
 			dataType="Trigger";
 			position[]={11189.045,509.85901,11519.087};
@@ -75844,7 +75908,7 @@ class Mission
 			id=24054;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1151
+		class Item1150
 		{
 			dataType="Trigger";
 			position[]={17388.943,512.24597,12130.578};
@@ -75862,7 +75926,7 @@ class Mission
 			id=24055;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1152
+		class Item1151
 		{
 			dataType="Trigger";
 			position[]={18407.188,409.40332,15153.447};
@@ -75880,7 +75944,7 @@ class Mission
 			id=24056;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1153
+		class Item1152
 		{
 			dataType="Trigger";
 			position[]={12878.191,399.42575,14651.534};
@@ -75898,7 +75962,7 @@ class Mission
 			id=24057;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1154
+		class Item1153
 		{
 			dataType="Trigger";
 			position[]={11639.052,413.35181,14568.76};
@@ -75916,7 +75980,7 @@ class Mission
 			id=24058;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1155
+		class Item1154
 		{
 			dataType="Trigger";
 			position[]={11522.697,411.24164,16591.82};
@@ -75934,7 +75998,7 @@ class Mission
 			id=24059;
 			type="EmptyDetectorAreaR50";
 		};
-		class Item1156
+		class Item1155
 		{
 			dataType="Object";
 			class PositionInfo
@@ -75952,7 +76016,7 @@ class Mission
 			id=23768;
 			type="Land_BluntRock_wallV";
 		};
-		class Item1157
+		class Item1156
 		{
 			dataType="Object";
 			class PositionInfo
@@ -75989,6 +76053,37 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item1157
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14413.125,364.57684,11330.266};
+						angles[]={0,5.0687904,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=23851;
+					type="C_scientist_F";
+					atlOffset=-0.026763916;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=24065;
+			atlOffset=-0.026763916;
 		};
 	};
 	class Connections
