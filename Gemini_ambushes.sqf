@@ -72,7 +72,7 @@
 	private _debug = param [0, false, [false]];
 	private _side = param [1, east, [east]];
 	private _maxAmbushes = param [2, 3, [3]];
-	private _possibleUnits = param [3, ["SWOP_Mando_True_sold", "SWOP_Mando_3", "SWOP_Mando_Protectors_sniper", "SWOP_Mando_True_mg", "SWOP_Mando_True_sold","SWOP_Mando_Protectors_AT","SWOP_Mando_Protectors_mg"], [[]]];
+	private _possibleUnits = param [3, ["SWOP_Mando_True_sold", "SWOP_Mando_True_serg", "SWOP_Mando_True_jumper", "SWOP_Mando_True_mg", "SWOP_Mando_True_sold","SWOP_Mando_True_of","SWOP_Mando_True_AT","SWOP_Mando_True_sniper"], [[]]];
 	private _forbiddenAreas = param [4, [], [[]]];
 
 

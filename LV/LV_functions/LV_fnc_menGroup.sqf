@@ -10,10 +10,10 @@ _BLUmen = ["B_Soldier_A_F","B_soldier_AR_F","B_medic_F","B_engineer_F","B_soldie
 _BLUmen2 = ["B_recon_exp_F","B_recon_JTAC_F","B_recon_M_F","B_recon_medic_F","B_recon_F","B_recon_LAT_F","B_recon_TL_F","B_soldier_AAR_F","B_soldier_AAA_F","B_soldier_AAT_F"];
 _BLUmen3 = ["B_G_Soldier_A_F","B_G_soldier_AR_F","B_G_medic_F","B_G_engineer_F","B_G_soldier_exp_F","B_G_Soldier_GL_F","B_G_soldier_M_F","B_G_officer_F","B_G_Soldier_F","B_G_soldier_LAT_F","B_G_Soldier_lite_F","B_G_Soldier_SL_F","B_G_Soldier_TL_F"];
 _BLUarrays = [_BLUmen,_BLUmen2,_BLUmen3];
-_OPFmen = ["SWOP_CIS_droid","SWOP_CIS_droid_AT","SWOP_CIS_droid_mg","SWOP_CIS_droid_crew","SWOP_CIS_droid","SWOP_CIS_droid_mg","SWOP_CIS_droid_mg","RD501_AA_Droid","B2_superdroid_Rocket","SWOP_CIS_droid_EWEB","SWOP_CIS_droid","SWOP_CIS_droid","SWOP_CIS_droid"];
+_OPFmen = ["SWOP_CIS_droid","SWOP_CIS_droid_AT","SWOP_CIS_droid_mg","SWOP_CIS_droid_crew","SWOP_CIS_droid","SWOP_CIS_droid_mg","SWOP_CIS_droid_mg","RD501_droid_AA","B2_superdroid_Rocket","SWOP_CIS_droid_EWEB","SWOP_CIS_droid","SWOP_CIS_droid","SWOP_CIS_droid"];
 _OPFmen2 = ["SWOP_CIS_droid_AT"];
 _OPFarrays = [_OPFmen,_OPFmen2];
-_INDmen = ["SWOP_CIS_droid_AT"];
+_INDmen = ["SWOP_Mando_True_sold", "SWOP_Mando_True_serg", "SWOP_Mando_True_jumper", "SWOP_Mando_True_mg", "SWOP_Mando_True_sold","SWOP_Mando_True_of","SWOP_Mando_True_AT","SWOP_Mando_True_sniper"];
 
 _men = [];
 if(typeName _size == "ARRAY")then{

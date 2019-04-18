@@ -5,8 +5,8 @@ _pos = _this select 0;
 _side = _this select 1;
 
 _BLUveh = ["B_Heli_Light_01_armed_F","B_Heli_Attack_01_F","B_Heli_Transport_01_F"];
-_OPFveh = ["swop_HMP_droidgunship","swop_vulture","swop_hbomber","swop_HMP_droidgunship_transport",];
-_INDveh = ["I_Heli_Transport_02_F","I_Plane_Fighter_03_AA_F","I_Plane_Fighter_03_CAS_F"];
+_OPFveh = ["swop_HMP_droidgunship","swop_vulture","swop_hbomber","swop_HMP_droidgunship_transport"];
+_INDveh = [""];
 
 _men = [];
 _veh = [];

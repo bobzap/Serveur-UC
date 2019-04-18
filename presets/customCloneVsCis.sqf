@@ -81,14 +81,14 @@ air_vehicles = [
 	["swop_LAATmk2_74",350,350,375],
 	["swop_LAATmk2_spec",400,350,375],
 	["swop_LAATmk2_ARC",400,40,375],
-	["laat_mk3_ND",500,450,375],
-	["RD501_LAAT_MK3_Doors_ND",500,450,375],
-	["laat_mk3_redMedic_ND",500,450,375],
-	["laat_mk3_blueKrayt_ND",500,450,475],
-	["laat_mk3_redKrayt_ND",500,450,475],
-	["laat_mk3_rangerEnforcer_ND",600,550,475],
-	["RD501_LAAT_MK3_Doors_SpecOps_ND",600,650,575],
-	["RD501_LAAT_MK3_Doors_ARC_ND",700,650,675],
+	["laat_mk3",500,450,375],
+	//["RD501_LAAT_MK3_Doors",500,450,375],
+	["laat_mk3_redMedic",500,450,375],
+	["laat_mk3_blueKrayt",500,450,475],
+	["laat_mk3_redKrayt",500,450,475],
+	["laat_mk3_rangerEnforcer",600,550,475],
+	//["RD501_LAAT_MK3_Doors_SpecOps",600,650,575],
+	//["RD501_LAAT_MK3_Doors_ARC",700,650,675],
 	["swop_Vwing_RD501_Base01",300,350,375],                        //Vwing 501
 	["swop_LAAT_cargo",400,450,475]									//LAAT Cargo
 	
@@ -375,9 +375,9 @@ militia_squad = [
 	"SWOP_CIS_droid_sniper",
 	"CAA_CIS_b2droid_laser",
 	"CAA_CIS_Battledroid_AT",
-	"SWOP_Droideka",
-	"SWOP_Droideka",
-	"SWOP_Droideka",
+	//"SWOP_Droideka",
+	//"SWOP_Droideka",
+	//"SWOP_Droideka",
 	"SpiderDSD",
 	"SWOP_CIS_droid_pilot"
 ];
@@ -386,7 +386,7 @@ militia_squad = [
 militia_vehicles = [
 	"SWOP_CIS_droid_guard",
 	"SWOP_CIS_droid",
-	"SWOP_Droideka",
+	//"SWOP_Droideka",
 	"O_SWOP_AAT_1"													//GAZ-233014 (Armed)
 ];
 
@@ -395,7 +395,7 @@ opfor_vehicles = [
 	"SWOP_CIS_droid_guard",
 	"SWOP_CIS_droid",
 	"O_SWOP_AAT_1",
-	"O_SWOP_Hailfire_1",
+	//"O_SWOP_Hailfire_1",
 	"O_SWOP_MTT_1"
 ];
 
@@ -413,7 +413,7 @@ opfor_battlegroup_vehicles = [
 	"SWOP_CIS_droid_guard",
 	"SWOP_CIS_droid",
 	"O_SWOP_AAT_1",
-	"O_SWOP_Hailfire_1",
+	//"O_SWOP_Hailfire_1",
 	"O_SWOP_MTT_1"
 ];
 

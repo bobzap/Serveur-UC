@@ -5,8 +5,8 @@ _pos = _this select 0;
 _side = _this select 1;
 
 _BLUveh = [""];
-_OPFveh = ["CIS_Tempest","CIS_art","RD501_eweb_shield","RD_STAP","O_SWOP_AAT_1_RD501","O_SWOP_AAT_1_King_RD501","RD_STAP","RD_STAP"];
-_INDveh = [""];
+_OPFveh = ["CIS_Tempest","CIS_art","RD501_eweb_shield","O_SWOP_AAT_1_RD501","O_SWOP_AAT_1_King_RD501"];
+_INDveh = ["SWOP_scavengerspeeder"];
 
 _men = [];
 _veh = [];

@@ -217,9 +217,10 @@ class CfgGradFortifications {
     demolitionTimeFactor = 1;
     playerInventorySize = 300;
     vehicleInventorySizeFactor = 600;
-    fortificationOwnerType = "SIDE"
+    fortificationOwnerType = "SIDE";
 
-    class Fortifications {
+    class Fortifications {  
+		
         class Land_BagFence_Long_F {
             boundingBoxSize = 1;
             canFloat = 1;
@@ -425,13 +426,10 @@ class CfgGradFortifications {
 			buildTime = 5;
 			onBuildComplete = "execVM 'UC\marker\marker.sqf', execVM 'UC\Attack\ia.sqf', execVM 'UC\effet\effect.sqf'";  //add this code ine the init box when object is built
         };
+		
 
 
-
-
-
-
-    };
+    }; 
 	
 	    
     class Vehicles {
@@ -507,7 +505,8 @@ class CfgGradBuymenu {
                 tracking = 1;
 				permissionLevel = 2;
 			};
-						
+			
+
 			class swop_RepShotgun {
 				displayName = "Shotgun";
 				description = "Dotation du clone lvl 3";
@@ -517,6 +516,8 @@ class CfgGradBuymenu {
 				permissionLevel = 3;
 				
 			};
+
+			
 			class SWOP_DTL20BlasterRifle {
 				displayName = "DLT20MB";
 				description = "Dotation du clone lvl 2";
@@ -535,15 +536,7 @@ class CfgGradBuymenu {
 				permissionLevel = 1;
 			};
 			
-			class SCI_RPS6 {
-				displayName = "Lance rocket";
-				description = "Dotation du clone lvl 2";
-				price = 0;
-				stock = 50;
-                tracking = 1;
-				permissionLevel = 2;
-			};
-
+			
 			class SWOP_DC17Pistol {
 				displayName = "Arme ed poing gradé";
                 description = "Dotation du gradé lvl 2";
@@ -1116,7 +1109,7 @@ class CfgGradBuymenu {
 				permissionLevel = 3;
 			};
 
-
+          
         };
 		
 		
@@ -1425,22 +1418,7 @@ class CfgGradBuymenu {
                 tracking = 1;
 			};
 			
-			class SCI_RPS6_HEAA {
-				displayName = "Munition lance Rocket HEAA";
-				description = "Dotation du clone";
-				price = 0;
-				stock = 100;
-                tracking = 1;
-			};
-			
-			class SCI_RPS6_HEDP {
-				displayName = "Munition lance Rocket HEDP";
-				description = "Dotation du clone";
-				price = 0;
-				stock = 100;
-                tracking = 1;
-			};
-			
+						
 			class SWOP_termDet_G {
 				displayName = "Grenade détonator";
 				description = "Dotation de base du clone";
@@ -1490,34 +1468,27 @@ class CfgGradBuymenu {
                 tracking = 1;
 				permissionLevel = 2;
 			};
-			class TermMine_Mag {
-				displayName = "Explosif A";
+			class SatchelCharge_Remote_Mag {
+				displayName = "Explosif M183";
 				description = "Dotation de base du clone EXP Explosif lvl 2";
-				price = 20;
+				price = 5;
 				stock = 100;
                 tracking = 1;
 				permissionLevel = 2;
 			};
-			class TermMineB_Mag {
-				displayName = "Explofif B";
+			class DemoCharge_Remote_Mag {
+				displayName = "Explofif M112";
 				description = "Dotation de base du clone EXP Explosif lvl 2";
-				price = 20;
+				price = 5;
 				stock = 100;
                 tracking = 1;
 				permissionLevel = 2;
 			};
-			class TermMineC_Mag {
-				displayName = "Explofif C";
-				description = "Dotation de base du clone EXP Explosif lvl 2";
-				price = 20;
-				stock = 100;
-                tracking = 1;
-				permissionLevel = 2;
-			};
+			
 			class M168_Remote_Mag {
 				displayName = "M168";
 				description = "Dotation de base du clone EXP Explosif lvl 2";
-				price = 20;
+				price = 5;
 				stock = 100;
                 tracking = 1;
 				permissionLevel = 2;
@@ -1530,7 +1501,14 @@ class CfgGradBuymenu {
                 tracking = 1;
 				permissionLevel = 2;
 			};
-			
+			class MineDetector {
+				displayName = "Détecteur";
+				description = "Dotation de base du clone EXP Explosif lvl 2";
+				price = 5;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 2;
+			};
 			
 			class swop_EMP_Remote_Mag {
 				displayName = "EMP Mine";
@@ -1540,6 +1518,7 @@ class CfgGradBuymenu {
                 tracking = 1;
 				permissionLevel = 2;
 			};
+
 			class ACE_Clacker {
 				displayName = "Dispositif de mise à feu";
 				description = "Dotation de base du clone lvl 2";
@@ -1595,6 +1574,26 @@ class CfgGradBuymenu {
                 tracking = 1;
 				permissionLevel = 1;
 			};
+
+			class adv_aceSplint_Splint {  
+				displayName = "Attelles";
+				description = "Attelles pour médecin";
+				price = 0;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 1;
+			};
+
+			class adv_aceCPR_AED {
+				displayName = "Défibrillateur";
+				description = "Défibrillateur CPR pour médecin";
+				price = 5;
+				stock = 100;
+                tracking = 1;
+				permissionLevel = 1;
+			};
+
+
 			class MRH_Map {
 				displayName = "Map dépliable";
 				description = "Carte déployable sur le terrain";
@@ -1610,7 +1609,7 @@ class CfgGradBuymenu {
                 tracking = 1;
 			};
 			
-			
+		
 		};
 
         
@@ -1618,7 +1617,7 @@ class CfgGradBuymenu {
     };
 
 
-//a different set of buyables
+      //a different set of buyables
     class Casques {        
 		class Wearables {
             kindOf = "Wearables";
@@ -2045,8 +2044,9 @@ class CfgGradBuymenu {
                 stock = 3;
                 permissionLevel = 7;
                 tracking = 1;
-				};				
-            };
+				};
+			
+         };
     };
 		
 	class bar_ext {        
@@ -2072,7 +2072,7 @@ class CfgGradBuymenu {
 			displayName = "Defenses";
 			kindOf = "Other";
 
-
+			
 			class Land_HBarrier_1_F {
 				displayName = "H-Barrier (1)";
 				price = 200;
@@ -2213,7 +2213,7 @@ class CfgGradBuymenu {
 				Permissionlevel = 0;
 				code = "if (player == _this select 0)  then { if([player, _this select 1] call grad_fortifications_fnc_canTake) then {[player,_this select 1] call grad_fortifications_fnc_addfort;} else { hint 'Stock Plein' } }";
 			};
-	
+			
 		};
 
 	};
