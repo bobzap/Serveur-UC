@@ -22,7 +22,7 @@ _position = GetPos player;
 _intensite = count (allPlayers select {_x distance _position < 100}); 
 
 
-_spawnCsi = ["ia1_0", "ia1_1", "ia1_2", "ia1_3"] call BIS_fnc_selectRandom;
+_spawnCsi = ["spCsi1", "spCsi2", "spCsi3", "spCsi4"] call BIS_fnc_selectRandom;
 
 if ( _intensite < 4 ) then {
 
@@ -32,7 +32,7 @@ UC_groupa = ["SWOP_CIS_droid", "SWOP_CIS_droid", "SWOP_CIS_droid", "CAA_CIS_Batt
 }
 
 else { 
-UC_groupa = ["SWOP_CIS_droid", "SWOP_CIS_droid", "SWOP_CIS_droid", "CAA_CIS_Battledroid_AT","SWOP_CIS_droid","SWOP_CIS_droid"];
+UC_groupa = ["SWOP_CIS_droid", "SWOP_CIS_droid", "SWOP_CIS_droid", "CAA_CIS_Battledroid_AT"];
 
 };
 
